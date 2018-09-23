@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     var counterUp = 0;
 
-    $(window).on("mousewheel", function (e) {
+    $(window).on("wheel", function (e) {
 
         if(e.originalEvent.wheelDelta < 0) {
             if(Math.abs(counterUp) < (width*10)-100) {
