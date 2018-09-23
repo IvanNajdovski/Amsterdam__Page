@@ -27,25 +27,49 @@ $(document).ready(function () {
     var width = $(".main__content__box-flex").children("a").outerWidth()
 
     var counterUp = 0;
-
+    console.log(navigator.userAgent.toLowerCase().indexOf('firefox'))
     $(window).on("mousewheel DOMMouseScroll", function (e) {
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            if (e.originalEvent.detail > 0) {
+                if (Math.abs(counterUp) < (width * 10) - 100) {
+                    counterUp = counterUp - 100;
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                }
+                else {
+                    counterUp = -width * 10
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                }
 
-        if(e.originalEvent.wheelDelta < 0) {
-            if(Math.abs(counterUp) < (width*10)-100) {
-                counterUp=counterUp-100;
-                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-             }
-             else{
-                counterUp= -width*10
-                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-            }
-        }else {
-            if(counterUp <0) {
+
+        }
+    else {
+            if (counterUp < 0) {
                 counterUp = counterUp + 100;
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-            }else{
-                counterUp=0
+            } else {
+                counterUp = 0
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+            }
+
+            }
+        }else {
+            if (e.originalEvent.wheelDelta < 0) {
+                if (Math.abs(counterUp) < (width * 10) - 100) {
+                    counterUp = counterUp - 100;
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                }
+                else {
+                    counterUp = -width * 10
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                }
+            } else {
+                if (counterUp < 0) {
+                    counterUp = counterUp + 100;
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                } else {
+                    counterUp = 0
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                }
             }
         }
     });
