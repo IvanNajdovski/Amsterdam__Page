@@ -1,0 +1,116 @@
+.arrow__left{
+  z-index: 300;
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+
+  height: 5rem;
+  width: 15rem;
+  border-radius: 2.5rem;
+  &-content{
+    background-image: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .2));
+    width: 5rem;
+    border-radius: 2.5rem;
+
+    overflow: hidden;
+    transition: width .5s;
+    &:hover{
+      width: 15rem;
+      transition: width .5s;
+    }
+    &:hover > .arrow__left-text{
+      opacity: 100;
+      transition: opacity .1s;
+      transition-delay: .3s;
+    }
+  }
+  &-text{
+    position: absolute;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Open Sans";
+    font-weight: 600;
+    white-space: nowrap;
+    float: right;
+
+    right: 0;
+    padding: 1.7rem;
+    opacity: 0;
+    & a{
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  &-box{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.5rem;
+    cursor: pointer;
+
+  }
+
+}
+.arrow__right{
+  z-index: 300;
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+
+  height: 5rem;
+  width: 15rem;
+  border-radius: 50%;
+  &-content{
+    background-image: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .2));
+    width: 5rem;
+    border-radius: 2.5rem;
+
+    overflow: hidden;
+    transition: width .5s;
+    display: flex;
+    justify-content: flex-end;
+    &:hover{
+      width: 15rem;
+      transition: width .5s;
+    }
+    &:hover > .arrow__right-text{
+      opacity: 100;
+      transition: opacity .1s;
+      transition-delay: .3s;
+    }
+  }
+  &-text{
+    position: absolute;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Open Sans";
+    font-weight: 600;
+    white-space: nowrap;
+    float: left;
+
+    left: 0;
+    padding: 1.7rem;
+    opacity: 0;
+    & a{
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  &-box{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.5rem;
+    cursor: pointer;
+
+  }
+
+}

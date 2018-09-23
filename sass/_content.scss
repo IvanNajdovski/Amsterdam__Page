@@ -1,0 +1,289 @@
+
+.main {
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    &__build {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 3rem;
+      z-index: 300;
+      &-header {
+        font-size: 2.5rem;
+        font-family: "Open Sans";
+        font-weight: 400;
+      }
+    }
+    &__menu-text {
+      font-size: 1rem;
+
+      font-family: "Open Sans";
+      font-weight: 400;
+      color: #fff;
+      position: absolute;
+      padding: 0 1.5rem;
+      top: 50%;
+      left: 2rem;
+      transform: translateY(-50%);
+      opacity: 0;
+
+    }
+    &__menu-box {
+      background-image: linear-gradient(rgba(140, 156, 161, .4), rgba(140, 156, 161, .4));
+      width: 5rem;
+      border-radius: 2.5rem;
+      overflow: hidden;
+      &:hover {
+        width: 15rem;
+        transition: width .3s;
+      }
+      &:hover > .main__content__menu-text {
+        opacity: 100;
+        transition: all .2s;
+        transition-delay: .2s;
+      }
+
+    }
+    &__menu-btn {
+
+      z-index: 10000;
+      float: right;
+      width: 5rem;
+      height: 5rem;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-style {
+        background-color: black;
+        height: 2px;
+        width: 2rem;
+        transition: all .5s;
+        &:before {
+          content: "";
+          display: block;
+          background-color: inherit;
+          height: 2px;
+          width: 2rem;
+          transform: translateY(-.5rem);
+          transition: all .5s;
+
+        }
+        &:after {
+          content: "";
+          display: block;
+          background-color: inherit;
+          height: 2px;
+          width: 2rem;
+          transform: translateY(.4rem);
+          //transition: all .5s;
+
+        }
+      }
+    }
+    &__box {
+
+
+      &-flex {
+        display: flex;
+        height: 100%;
+        flex: 0 0 100%;
+      }
+      & a {
+        flex: 0 0 33.33%;
+        //width: 100%;
+        height: 100vh;
+        color: inherit;
+        text-decoration: none;
+        //&:hover >.main__content__box-item .main__content__box-item-texthidden{
+        //  visibility: visible;
+        //  opacity: 100;
+        //}
+      }
+      &-item {
+
+        width: 100%;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2rem 4rem 12rem 4rem;
+        transition: height .3s;
+        &:hover > .main__content__box-item-texthidden{
+          visibility: visible;
+          opacity: 100;
+          transition: all .2s;
+          transition-delay: .5s;
+
+        }
+        &:hover > .main__content__box-item-header{
+          transform: translateY(0);
+          transition: all .5s;
+
+        }
+        & h1{
+          font-size: 4rem;
+          font-weight: 400;
+          font-family: "Open Sans";
+          color: #fff;
+          padding-bottom: 2rem;
+          transform: translateY(70px);
+          transition: all .5s;
+        }
+        &-texthidden{
+          height: 70px;
+          visibility: hidden;
+          opacity: 0;
+          font-family: "Open Sans";
+          font-size: 1.4rem;
+          font-weight: 600;
+          color:#fff;
+          padding-bottom: 2rem;
+        }
+        &-text{
+          font-family: "Open Sans";
+          font-size: 1.4rem;
+          font-weight: 600;
+          color:#fff;
+        }
+        &-1 {
+          background-image: url("../img/protest_1.jpg");
+          background-size: cover;
+          background-position: 20%;
+        }
+        &-2 {
+          background-image: url("../img/protest_2.jpg");
+          background-size: cover;
+          background-position: left;
+
+        }
+        &-3 {
+          background-image: url("../img/protest_3.jpg");
+          background-size: cover;
+          background-position: 80%;
+        }
+        &-4 {
+          background-image: url("../img/protest_4.jpg");
+          background-size: cover;
+          background-position: right, 100px;
+        }
+        &-5 {
+          background-image: url("../img/protest_5.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        &-6 {
+          background-image: url("../img/protest_6.jpg");
+          background-size: cover;
+          background-position: left;
+
+        }
+        &-7 {
+          background-image: url("../img/protest_7.jpg");
+          background-size: cover;
+          background-position: 80%;
+        }
+        &-8 {
+          background-image: url("../img/protest_8.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        &-9 {
+          background-image: url("../img/protest_9.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        &-10 {
+          background-image: url("../img/protest_10.jpg");
+          background-size: cover;
+          background-position: right;
+
+        }
+        &-11 {
+          background-image: url("../img/protest_11.jpg");
+          background-size: cover;
+          background-position:20%;
+        }
+        &-12 {
+          background-image: url("../img/protest_12.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        &-13 {
+          background-image: url("../img/protest_13.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+
+      }
+    }
+  }
+}
+
+
+.main__content__box-flex {
+  transition-timing-function: ease-out;
+  //transform: matrix(1,0,0,1,-1000,0);
+  transition: all 1s;
+
+}
+
+.main__menu {
+  z-index: 200;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  width: 15rem;
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main__content__menu-btn:hover > .main__content__menu-btn-style {
+
+  transform: rotate(90deg) translateY(0);
+  transition: all .5s;
+}
+
+.main__content__menu-btn.active:hover > .main__content__menu-btn-style {
+
+  transform: rotate(90deg) translateY(0);
+  transition: all .5s;
+}
+
+.main__content__menu-btn-style.active {
+  background-color: black;
+  height: 2px;
+  width: 2rem;
+
+  transform: rotate(-45deg);
+  &:before {
+    content: "";
+    display: block;
+    background-color: inherit;
+    height: 2px;
+    width: 2rem;
+    transform: rotate(90deg);
+  }
+  &:after {
+    content: "";
+    display: block;
+    background-color: inherit;
+    height: 2px;
+    width: 2rem;
+    transform: rotate(-45deg) translateY(-.1rem);
+    visibility: hidden;
+  }
+}
+
+.main__content__menu-text-header {
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: "Open Sans";
+  color: #fff;
+}
