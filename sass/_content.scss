@@ -11,9 +11,13 @@
       padding: 3rem;
       z-index: 300;
       &-header {
+        color: #fff;
         font-size: 2.5rem;
         font-family: "Open Sans";
         font-weight: 400;
+        &.active{
+          color: black;
+        }
       }
     }
     &__menu-text {

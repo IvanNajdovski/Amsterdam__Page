@@ -112,9 +112,12 @@ html {
     padding: 3rem;
     z-index: 300; }
     .main__content__build-header {
+      color: #fff;
       font-size: 2.5rem;
       font-family: "Open Sans";
       font-weight: 400; }
+      .main__content__build-header.active {
+        color: black; }
   .main__content__menu-text {
     font-size: 1rem;
     font-family: "Open Sans";
@@ -444,3 +447,304 @@ html {
   .menu__popup__item-box-btn a {
     text-decoration: none;
     color: inherit; }
+
+.animation {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  letter-spacing: 0.2rem; }
+  .animation__banner {
+    flex: 0 0 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; }
+    .animation__banner-box {
+      background-color: black;
+      flex: 0 0 100%;
+      height: 100%; }
+      .animation__banner-box.active {
+        flex: 0 0 0%;
+        transition-timing-function: ease-in-out;
+        transition: all 1s; }
+  .animation h1 {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    color: #fff;
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 12rem;
+    display: flex;
+    justify-items: flex-start;
+    flex-wrap: wrap; }
+    .animation h1 span {
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      visibility: hidden;
+      width: 7rem;
+      height: 17rem;
+      overflow: hidden; }
+      .animation h1 span:before {
+        display: block;
+        color: #fff;
+        visibility: visible;
+        transform: translate(55%, 150px);
+        transition: all .3s; }
+      .animation h1 span.active:before {
+        transform: translateX(60px); }
+  .animation.hover > h1 > span:before {
+    transform: translate(55%, 0); }
+  .animation.hover > h1 > .span-1:before {
+    content: "S";
+    transition: all .1s; }
+  .animation.hover > h1 > .span-2:before {
+    content: "t";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-3:before {
+    content: "r";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-4:before {
+    content: "a";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-5:before {
+    content: "t";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-6:before {
+    content: "e";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-7:before {
+    content: "g";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-8:before {
+    content: "y";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-9:before {
+    content: "";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-10:before {
+    content: "B";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-11:before {
+    content: "r";
+    transition: all .4s;
+    transition-delay: .5s; }
+  .animation.hover > h1 > .span-12:before {
+    content: "a";
+    transition: all .4s;
+    transition-delay: .3s; }
+  .animation.hover > h1 > .span-13:before {
+    content: "n";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-14:before {
+    transition: all .4s;
+    transition-delay: .52s; }
+  .animation.hover > h1 > .span-15:before {
+    content: "i";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-16:before {
+    content: "n";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-17:before {
+    content: "g";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-18:before {
+    content: "";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-19:before {
+    content: "a";
+    transition: all .4s;
+    transition-delay: .3s; }
+  .animation.hover > h1 > .span-20:before {
+    content: "n";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-21:before {
+    content: "d";
+    transition: all .4s;
+    transition-delay: .5s; }
+  .animation.hover > h1 > .span-22:before {
+    content: "";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-23:before {
+    content: "e";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-24:before {
+    content: "-";
+    transition: all .4s;
+    transition-delay: .3s; }
+  .animation.hover > h1 > .span-25:before {
+    content: "c";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-26:before {
+    content: "o";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-27:before {
+    content: "m";
+    transition: all .4s;
+    transition-delay: .4s; }
+  .animation.hover > h1 > .span-28:before {
+    content: "m";
+    transition: all .4s;
+    transition-delay: .05s; }
+  .animation.hover > h1 > .span-29:before {
+    content: "e";
+    transition: all .4s;
+    transition-delay: .2s; }
+  .animation.hover > h1 > .span-30:before {
+    content: "r";
+    transition: all .4s;
+    transition-delay: .36s; }
+  .animation.hover > h1 > .span-31:before {
+    content: "c";
+    transition: all .4s;
+    transition-delay: .3s; }
+  .animation.hover > h1 > .span-32:before {
+    content: "e";
+    transition: all .4s;
+    transition-delay: .1s; }
+  .animation.hover > h1 > .span-33:before {
+    content: ".";
+    transition: all .4s;
+    transition-delay: .24s; }
+
+.span-small {
+  width: 6rem !important; }
+
+.span-xs {
+  width: 4rem !important; }
+
+.span-big {
+  width: 10rem !important; }
+
+.span-space {
+  width: 5rem;
+  height: 5rem; }
+
+.span-1:before {
+  content: "S"; }
+
+.span-2:before {
+  content: "t"; }
+
+.span-3:before {
+  content: "r"; }
+
+.span-4:before {
+  content: "a"; }
+
+.span-5:before {
+  content: "t"; }
+
+.span-6:before {
+  content: "e"; }
+
+.span-7:before {
+  content: "g"; }
+
+.span-8:before {
+  content: "y"; }
+
+.span-9:before {
+  content: ""; }
+
+.span-10:before {
+  content: "B"; }
+
+.span-11:before {
+  content: "r"; }
+
+.span-12:before {
+  content: "a"; }
+
+.span-13:before {
+  content: "n"; }
+
+.span-14:before {
+  content: "d"; }
+
+.span-15:before {
+  content: "i"; }
+
+.span-16:before {
+  content: "n"; }
+
+.span-17:before {
+  content: "g"; }
+
+.span-18:before {
+  content: ""; }
+
+.span-19:before {
+  content: "a"; }
+
+.span-20:before {
+  content: "n"; }
+
+.span-21:before {
+  content: "d"; }
+
+.span-22:before {
+  content: ""; }
+
+.span-23:before {
+  content: "e"; }
+
+.span-24:before {
+  content: "-"; }
+
+.span-25:before {
+  content: "c"; }
+
+.span-26:before {
+  content: "o"; }
+
+.span-27:before {
+  content: "m"; }
+
+.span-28:before {
+  content: "m"; }
+
+.span-29:before {
+  content: "e"; }
+
+.span-30:before {
+  content: "r"; }
+
+.span-31:before {
+  content: "c"; }
+
+.span-32:before {
+  content: "e"; }
+
+.span-33:before {
+  content: "."; }
+
+span.active:before {
+  transform: translateX(200px) !important;
+  transition: all .5s; }

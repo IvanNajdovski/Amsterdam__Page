@@ -1,0 +1,492 @@
+.animation{
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  //background-color: black;
+  //padding: 5rem 14rem 0 14rem;
+  letter-spacing: 0.2rem;
+  &__banner{
+    flex: 0 0 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    &-box{
+      background-color: black;
+      flex: 0 0 100%;
+      height: 100%;
+      &.active{
+        flex: 0 0 0%;
+        transition-timing-function: ease-in-out;
+        transition: all 1s;
+      }
+    }
+
+  }
+  & h1{
+    position: absolute;
+    top:50%;
+    left:5%;
+    transform: translate(0,-50%);
+    color: #fff;
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 12rem;
+    display: flex;
+    justify-items: flex-start;
+
+    flex-wrap: wrap;
+    & span{
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      visibility: hidden;
+      width: 7rem;
+      height: 17rem;
+      overflow: hidden;
+      &:before{
+        //content: contents;
+        display: block;
+        color: #fff;
+        visibility: visible;
+        transform: translate(55%,150px );
+        transition: all .3s;
+      }
+      &.active{
+        &:before{
+          transform: translateX(60px);
+        }
+      }
+    }
+  }
+  &.hover>h1>span:before{
+    transform: translate(  55%, 0);
+    //transition: all .3s;
+  }
+  &.hover>h1>.span{
+    &-1{
+      &:before {
+        content: "S";
+        transition: all .1s;
+      }
+    }
+    &-2{
+      &:before {
+        content: "t";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-3{
+      &:before {
+        content: "r";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-4{
+      &:before {
+        content: "a";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-5{
+      &:before {
+        content: "t";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-6{
+      &:before {
+        content: "e";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-7{
+      &:before {
+        content: "g";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-8{
+      &:before {
+        content: "y";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-9{
+      &:before {
+        content: "";
+        transition: all .4s;
+        transition-delay: .4s;
+    }
+    }
+    &-10{
+      &:before {
+        content: "B";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-11{
+      &:before {
+        content: "r";
+        transition: all .4s;
+        transition-delay: .5s;
+      }
+    }
+    &-12{
+      &:before {
+        content: "a";
+        transition: all .4s;
+        transition-delay: .3s;
+      }
+    }
+    &-13{
+      &:before {
+        content: "n";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-14{
+      &:before {
+        transition: all .4s;
+        transition-delay: .52s;
+      }
+    }
+    &-15{
+      &:before {
+        content: "i";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-16{
+      &:before {
+        content: "n";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-17{
+      &:before {
+        content: "g";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-18{
+      &:before {
+        content: "";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-19{
+      &:before {
+        content: "a";
+        transition: all .4s;
+        transition-delay: .3s;
+      }
+    }
+    &-20{
+      &:before {
+        content: "n";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-21{
+      &:before {
+        content: "d";
+        transition: all .4s;
+        transition-delay: .5s;
+      }
+    }
+    &-22{
+      &:before {
+        content: "";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-23{
+      &:before {
+        content: "e";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-24{
+      &:before {
+        content: "-";
+        transition: all .4s;
+        transition-delay: .3s;
+      }
+    }
+    &-25{
+      &:before {
+        content: "c";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-26{
+      &:before {
+        content: "o";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-27{
+      &:before {
+        content: "m";
+        transition: all .4s;
+        transition-delay: .4s;
+      }
+    }
+    &-28{
+      &:before {
+        content: "m";
+        transition: all .4s;
+        transition-delay: .05s;
+      }
+    }
+    &-29{
+      &:before {
+        content: "e";
+        transition: all .4s;
+        transition-delay: .2s;
+      }
+    }
+    &-30{
+      &:before {
+        content: "r";
+        transition: all .4s;
+        transition-delay: .36s;
+      }
+    }
+    &-31{
+      &:before {
+        content: "c";
+        transition: all .4s;
+        transition-delay: .3s;
+      }
+    }
+    &-32{
+      &:before {
+        content: "e";
+        transition: all .4s;
+        transition-delay: .1s;
+      }
+    }
+    &-33{
+      &:before {
+        content: ".";
+        transition: all .4s;
+        transition-delay: .24s;
+      }
+    }
+  }
+}
+.span{
+  &-small{
+    width: 6rem !important;
+  }
+  &-xs{
+    width: 4rem !important;
+  }
+  &-big{
+    width: 10rem !important;
+  }
+  &-space{
+    width: 5rem;
+    height: 5rem;
+  }
+  &-1{
+    &:before {
+      content: "S";
+    }
+  }
+  &-2{
+    &:before {
+      content: "t";
+    }
+  }
+  &-3{
+    &:before {
+      content: "r";
+    }
+  }
+  &-4{
+    &:before {
+      content: "a";
+    }
+  }
+  &-5{
+    &:before {
+      content: "t";
+    }
+  }
+  &-6{
+    &:before {
+      content: "e";
+    }
+  }
+  &-7{
+    &:before {
+      content: "g";
+    }
+  }
+  &-8{
+    &:before {
+      content: "y";
+    }
+  }
+  &-9{
+    &:before {
+      content: "";
+    }
+  }
+  &-10{
+    &:before {
+      content: "B";
+    }
+  }
+  &-11{
+    &:before {
+      content: "r";
+    }
+  }
+  &-12{
+    &:before {
+      content: "a";
+    }
+  }
+  &-13{
+    &:before {
+      content: "n";
+    }
+  }
+  &-14{
+    &:before {
+      content: "d";
+    }
+  }
+  &-15{
+    &:before {
+      content: "i";
+    }
+  }
+  &-16{
+    &:before {
+      content: "n";
+    }
+  }
+  &-17{
+    &:before {
+      content: "g";
+    }
+  }
+  &-18{
+    &:before {
+      content: "";
+    }
+  }
+  &-19{
+    &:before {
+      content: "a";
+    }
+  }
+  &-20{
+    &:before {
+      content: "n";
+    }
+  }
+  &-21{
+    &:before {
+      content: "d";
+    }
+  }
+  &-22{
+    &:before {
+      content: "";
+    }
+  }
+  &-23{
+     &:before {
+       content: "e";
+     }
+   }
+  &-24{
+      &:before {
+        content: "-";
+      }
+    }
+  &-25{
+    &:before {
+      content: "c";
+    }
+  }
+  &-26{
+    &:before {
+      content: "o";
+    }
+  }
+  &-27{
+    &:before {
+      content: "m";
+    }
+  }
+  &-28{
+    &:before {
+      content: "m";
+    }
+  }
+  &-29{
+    &:before {
+      content: "e";
+    }
+  }
+  &-30{
+    &:before {
+      content: "r";
+    }
+  }
+  &-31{
+    &:before {
+      content: "c";
+    }
+  }
+  &-32{
+    &:before {
+      content: "e";
+    }
+  }
+  &-33{
+    &:before {
+      content: ".";
+    }
+  }
+
+}
+span{
+  &.active{
+    &:before {
+      transform: translateX(200px) !important;
+      transition: all .5s;
+    }
+    }
+}
