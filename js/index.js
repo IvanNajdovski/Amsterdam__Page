@@ -67,7 +67,35 @@ $(document).ready(function () {
     var width = $(".main__content__box-flex").children("a").outerWidth()
 
     var counterUp = 0;
+    $(".main__link").on("click", function (e) {
 
+        itemWidth = 0;
+        e.preventDefault()
+
+        $(".content__bottom").toggleClass("active")
+
+        var index = $(this).index()
+        for (var i = 0; i < index; i++) {
+            itemWidth = itemWidth + $(this).outerWidth()
+
+        }
+        $('.main__content__box-flex').children("a").not(this).each(function () {
+            $(this).removeClass('active');
+
+        });
+
+        if ($(this).hasClass("active")) {
+            if (Math.abs(counterUp) > fullWidth - $(window).width()) {
+                counterUp = -fullWidth + $(window).width()
+                $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+            }
+
+        } else {
+            counterUp = -itemWidth
+            $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+        }
+        $(this).toggleClass("active")
+    });
     // $(window).on("mousewheel DOMMouseScroll", function (e) {
     //     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
     //         if (e.originalEvent.detail > 0) {
@@ -115,8 +143,6 @@ $(document).ready(function () {
     // });
 
     $(window).on("mousewheel DOMMouseScroll", function (e) {
-        console.log($("body,html").outerHeight())
-        console.log($(window).outerHeight())
 
         if ($("body,html").outerHeight() -100 > $(window).outerHeight()) {
 
@@ -219,33 +245,7 @@ $(document).ready(function () {
         fullWidth = fullWidth + $(item).outerWidth()
     }
 
-    $("a").on("click", function (e) {
 
-        itemWidth = 0;
-        e.preventDefault()
-        $(".content__bottom").toggleClass("active")
-        var index = $(this).index()
-        for (var i = 0; i < index; i++) {
-            itemWidth = itemWidth + $(this).outerWidth()
-
-        }
-        $('.main__content__box-flex').children("a").not(this).each(function () {
-            $(this).removeClass('active');
-
-        });
-
-        if ($(this).hasClass("active")) {
-            if (Math.abs(counterUp) > fullWidth - $(window).width()) {
-                counterUp = -fullWidth + $(window).width()
-                $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
-            }
-
-        } else {
-            counterUp = -itemWidth
-            $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
-        }
-        $(this).toggleClass("active")
-    })
     // $(window).scroll(function(e){
     //     parallaxScroll();
     // });
