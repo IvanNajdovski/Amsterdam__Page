@@ -176,6 +176,8 @@
   }
 }
 .content__bottom{
+  width: 100vw;
+  overflow: hidden;
   &.active{
   display: block;
 }

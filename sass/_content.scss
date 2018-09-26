@@ -1,4 +1,26 @@
+@keyframes arrow {
+0%{
+  transform: translateX(0);
+  opacity: 100;
+}
+  40%{
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  70%{
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  80%{
+    transform: translateX(5px);
+  }
 
+  100%{
+    transform: translateX(0);
+    opacity: 100;
+  }
+
+}
 .main {
   &__content {
     width: 100%;
@@ -11,10 +33,113 @@
       padding: 3rem;
       z-index: 300;
       &-header {
+        position:relative;
         color: #fff;
         font-size: 2.5rem;
         font-family: "Open Sans";
-        font-weight: 400;
+        font-weight: 600;
+        transition: all 1s;
+        & .invisible{
+          visibility: visible;
+          opacity: 100;
+          transition: all .3s;
+        }
+        & .span-arrow{
+          visibility: hidden;
+          opacity: 0;
+          transform: translateX(-2rem);
+          transition: all .3s;
+        }
+        &.animate > .span-arrow{
+          visibility: visible;
+          opacity: 100;
+          transform: translateX(0);
+          transition: all 1.3s;
+          cursor: pointer;
+          &:hover{
+            animation-name: arrow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+          }
+
+
+        }
+        &.animate > .invisible{
+          visibility: hidden;
+          opacity: 0;
+          transition: all 1.3s;
+
+        }
+        &.animate{
+          & .span{
+            &-arrow{
+
+            }
+            &-visible-1{
+              top:0;
+              left:3rem;
+              transition: all .5s;
+              transition-delay: .3s;
+            }
+            &-visible-2{
+              top:0;
+              left:4.8rem;
+              transition: all .5s;
+              transition-delay: .3s;
+            }
+            &-visible-3{
+              top:0;
+              left:5.8rem;
+              transition: all .5s;
+              transition-delay: .5s;
+            }
+            &-visible-4{
+              top:0;
+              left:7.5rem;
+              transition: all .5s;
+              transition-delay: .8s;
+            }
+          }
+        }
+        & span{
+          transition: all.5s;
+        }
+        & .span{
+
+          &-visible-1{
+            top:0;
+            left:2rem;
+          }
+          &-invisible-1{
+            top:0;
+            left:3.5rem;
+          }
+          &-visible-2{
+            top:3rem;
+            left: 2rem;
+          }
+          &-invisible-2{
+            top:3rem;
+            left:2.5rem;
+          }
+          &-visible-3{
+            top:3rem;
+            left:5rem;
+          }
+          &-invisible-3{
+            top:3rem;
+            left:6.5rem;
+          }
+          &-visible-4{
+            top:3rem;
+            left:19rem;
+          }
+        }
+        & span{
+          position: absolute;
+          top:0;
+          left:0;
+        }
         &.active{
           color: black;
         }
@@ -105,14 +230,11 @@
         }
         flex: 0 0 33.33%;
         transition: all .5s;
-        //width: 100%;
+
         height: 100vh;
         color: inherit;
         text-decoration: none;
-        //&:hover >.main__content__box-item .main__content__box-item-texthidden{
-        //  visibility: visible;
-        //  opacity: 100;
-        //}
+
       }
       &-item {
 

@@ -101,6 +101,22 @@ html {
     padding: 1.5rem;
     cursor: pointer; }
 
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+    opacity: 100; }
+  40% {
+    transform: translateX(-10px);
+    opacity: 0; }
+  70% {
+    transform: translateX(10px);
+    opacity: 0; }
+  80% {
+    transform: translateX(5px); }
+  100% {
+    transform: translateX(0);
+    opacity: 100; } }
+
 .main__content {
   width: 100%;
   overflow: hidden;
@@ -112,10 +128,82 @@ html {
     padding: 3rem;
     z-index: 300; }
     .main__content__build-header {
+      position: relative;
       color: #fff;
       font-size: 2.5rem;
       font-family: "Open Sans";
-      font-weight: 400; }
+      font-weight: 600;
+      transition: all 1s; }
+      .main__content__build-header .invisible {
+        visibility: visible;
+        opacity: 100;
+        transition: all .3s; }
+      .main__content__build-header .span-arrow {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-2rem);
+        transition: all .3s; }
+      .main__content__build-header.animate > .span-arrow {
+        visibility: visible;
+        opacity: 100;
+        transform: translateX(0);
+        transition: all 1.3s;
+        cursor: pointer; }
+        .main__content__build-header.animate > .span-arrow:hover {
+          animation-name: arrow;
+          animation-duration: 1s;
+          animation-iteration-count: infinite; }
+      .main__content__build-header.animate > .invisible {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1.3s; }
+      .main__content__build-header.animate .span-visible-1 {
+        top: 0;
+        left: 3rem;
+        transition: all .5s;
+        transition-delay: .3s; }
+      .main__content__build-header.animate .span-visible-2 {
+        top: 0;
+        left: 4.8rem;
+        transition: all .5s;
+        transition-delay: .3s; }
+      .main__content__build-header.animate .span-visible-3 {
+        top: 0;
+        left: 5.8rem;
+        transition: all .5s;
+        transition-delay: .5s; }
+      .main__content__build-header.animate .span-visible-4 {
+        top: 0;
+        left: 7.5rem;
+        transition: all .5s;
+        transition-delay: .8s; }
+      .main__content__build-header span {
+        transition: all 0.5s; }
+      .main__content__build-header .span-visible-1 {
+        top: 0;
+        left: 2rem; }
+      .main__content__build-header .span-invisible-1 {
+        top: 0;
+        left: 3.5rem; }
+      .main__content__build-header .span-visible-2 {
+        top: 3rem;
+        left: 2rem; }
+      .main__content__build-header .span-invisible-2 {
+        top: 3rem;
+        left: 2.5rem; }
+      .main__content__build-header .span-visible-3 {
+        top: 3rem;
+        left: 5rem; }
+      .main__content__build-header .span-invisible-3 {
+        top: 3rem;
+        left: 6.5rem; }
+      .main__content__build-header .span-visible-4 {
+        top: 3rem;
+        left: 19rem; }
+      .main__content__build-header span {
+        position: absolute;
+        top: 0;
+        left: 0; }
       .main__content__build-header.active {
         color: black; }
   .main__content__menu-text {
@@ -901,6 +989,8 @@ span.active:before {
     background-position: center; }
 
 .content__bottom {
+  width: 100vw;
+  overflow: hidden;
   display: none; }
   .content__bottom.active {
     display: block; }
