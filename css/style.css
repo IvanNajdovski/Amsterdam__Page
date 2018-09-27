@@ -810,7 +810,7 @@ html {
           width: 3.5rem; } }
       @media only screen and (max-width: 433px) {
         .animation h1 span {
-          width: 3rem; } }
+          width: 3.5rem; } }
       .animation h1 span:before {
         display: block;
         color: #fff;

@@ -56,8 +56,8 @@ $(document).ready(function () {
                 $(".content__bottom").removeClass("active")
                 $(".content__bottom").empty()
                 if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
-                    counterUp = fullWidth - $(window).innerWidth();
-                    counterUp = -Math.abs(counterUp);
+                    counterUp = -(fullWidth - $(window).outerWidth());
+
                     $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
                     $(".content__bottom").empty()
                 }
@@ -223,7 +223,7 @@ $(document).ready(function () {
                 counterUp = counterUp - $(window).outerWidth();
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
             } else {
-                counterUp = -width * 10
+                counterUp = -(fullWidth - $(window).outerWidth())
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
             }
         }else{
