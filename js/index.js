@@ -1,7 +1,5 @@
-
-
 $(document).ready(function () {
-     //             -------------------STYLING THE POPUP SCREEN
+    //             -------------------STYLING THE POPUP SCREEN
     $(".menu__popup__item").on("mouseleave", function () {
 
         $(this).children("div").children("div").children("p").removeClass("active");
@@ -30,6 +28,7 @@ $(document).ready(function () {
     });
 
     var width = $(".main__link").innerWidth();
+    console.log(width)
     var flexWidth = $(".main__content__box-flex").children("a");
     var fullWidth = 0
     for (let item of flexWidth) {
@@ -38,36 +37,53 @@ $(document).ready(function () {
     let counterUp = 0;
 //        --------------CLICK EVENT FOR THE SECTIONS----------------
     $(".main__link").on("click", function (e) {
-        $(".main__content__build-header").toggleClass("animate")
+        $(".main__content__build-header").removeClass("animate")
         var index = $(this).index();
-        itemWidth = width*index;
+        itemWidth = width * index;
         e.preventDefault()
-        $(".content__bottom").toggleClass("active")
         $('.main__content__box-flex').children("a").not(this).each(function () {
             $(this).removeClass('active');
+            //$(".content__bottom").empty()
         });
+
+
         if ($(this).hasClass("active")) {
+            $(".content__bottom").removeClass("active")
+            $(".content__bottom").empty()
             if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
                 counterUp = fullWidth - $(window).innerWidth();
                 counterUp = -Math.abs(counterUp);
                 $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+                $(".content__bottom").empty()
             }
         } else {
             counterUp = itemWidth
             counterUp = -Math.abs(counterUp)
             $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+            $(".content__bottom").addClass("active")
         }
         $(this).toggleClass("active")
+        $('.main__content__box-flex').children("a").each(function () {
+            if($(this).hasClass('active')){
+                $(this).children("div").children().addClass("active");
+            }else{
+                $(this).children("div").children().removeClass("active");
+            }
+
+        });
+
+
     });
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
-    $(window).on("mousewheel DOMMouseScroll", function (e) {
-console.log(width)
-        if ($("body,html").outerHeight() -100 > $(window).outerHeight()) {
 
-        } else {
+    $(window).on("mousewheel DOMMouseScroll", function (e) {
+
+        if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
+
+        }else {
             if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                 if (e.originalEvent.detail > 0) {
-                    if (Math.abs(counterUp) < fullWidth - 100) {
+                    if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
                         counterUp = counterUp - 100;
                         $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
                     }
@@ -92,7 +108,7 @@ console.log(width)
             }
             else {
                 if (e.originalEvent.wheelDelta < 0) {
-                    if (Math.abs(counterUp) < fullWidth - 100) {
+                    if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
                         counterUp = counterUp - 100;
                         $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
                     }
@@ -113,7 +129,7 @@ console.log(width)
             }
         }
     });
-   //              -------------------CLICK EVENT FOR THE ARROWS IN THE BOTTOM--------------------
+    //              -------------------CLICK EVENT FOR THE ARROWS IN THE BOTTOM--------------------
     $(".arrow__right").on("click", function () {
         if (Math.abs(counterUp) < (width * 10) - $(window).outerWidth()) {
             counterUp = counterUp - $(window).outerWidth();
@@ -155,22 +171,58 @@ console.log(width)
 
     }, 4000);
 
+//  ------------------GOING BACK AND RESETING CLASESS---------------------
+   $(".span-arrow").on("click", function(){
+       $('.main__content__box-flex').children("a").each(function () {
+           if ($(this).hasClass('active')) {
+               $(this).children("div").children().removeClass("active");
+               $(this).removeClass("active");
+           } else {
+           }
+           $(".content__bottom").removeClass("active").empty();
+           $(".main__content__build-header").removeClass("animate")
+           //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
+           if (Math.abs(counterUp) +$(window).width() > fullWidth - 100) {
+               counterUp = fullWidth -$(window).width();
+               $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
+           }
+       });
+
+   });
+    $(".arrow__middle").on("click", function(){
+
+            $('html, body').animate({
+                scrollTop: 0
+            },1000,function(){
+
+            });
+            setTimeout(function() {
+                $('.main__content__box-flex').children("a").each(function () {
+                    if ($(this).hasClass('active')) {
+                        $(this).children("div").children().removeClass("active");
+                        $(this).removeClass("active");
+                    } else {
+                    }
+                });
+                $(".content__bottom").removeClass("active").empty();
+                $(".main__content__build-header").removeClass("animate");
+                $(".arrow__middle").addClass("active");
+                //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
+                if (Math.abs(counterUp) +$(window).width() > fullWidth - 100) {
+                    counterUp = fullWidth -$(window).width();
+                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
+                }
+            },1000);
+        });
 
 
-
-    // $(window).scroll(function(e){
-    //     parallaxScroll();
-    // });
-
-    // function parallaxScroll(){
-    //     var scrolled = $(window).scrollTop();
-    //     var winight = $(window).height()
-    //     $('#parallax-bg-1').css('translateY',`(${-(scrolled*.25)}px)`);
-    //
-    //     $('#parallax-bg-3').css('translateY',`(${winight-150-(scrolled*.75)}px)`);
-    //
-    // }
-
+   $(window).on("mousewheel",function(){
+       if($(window).scrollTop() > 600){
+           $(".arrow__middle").removeClass("active");
+       }else{
+           $(".arrow__middle").addClass("active");
+       }
+   });
 
 
 });

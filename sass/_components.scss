@@ -55,6 +55,46 @@
   }
 
 }
+
+
+.arrow__middle{
+
+  z-index: 300;
+  position: fixed;
+  bottom: 5rem;
+  right: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(50%);
+  cursor: pointer;
+  &:hover > .arrow__middle-content >.arrow__middle-box{
+    animation: arrowUp;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  &-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .2));
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+  }
+  &-box{
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Open Sans";
+    font-weight: 600;
+
+
+  }
+  &.active{
+    display: none;
+  }
+}
 .arrow__right{
   z-index: 300;
   position: absolute;
