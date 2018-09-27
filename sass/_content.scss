@@ -53,7 +53,7 @@
     position: relative;
 
     &__build {
-      position: absolute;
+      position: fixed;
       top: 1rem;
       left: 1rem;
       padding: 3rem;
@@ -260,7 +260,9 @@
       & a{
         &.active{
           flex: 1 0 100%;
-          transition: all .5s;
+          transition: all .5s linear;
+          position: relative;
+          height: 140vh;
         }
         flex: 1 0 33.33%;
         width: 33.33%;
@@ -272,9 +274,7 @@
 
       }
       &-item {
-
         width: 100%;
-
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -297,6 +297,9 @@
         &:hover > .main__content__box-item-header{
           transform: translateY(0);
           transition: all .5s;
+          &.active{
+            transform: translateY(70px);
+          }
 
         }
         & h1{
@@ -308,8 +311,12 @@
           transform: translateY(70px);
           transition: all .5s;
           &.active{
+            font-weight: 600;
             font-size: 10rem;
             transition: all .5s;
+            position: absolute;
+            padding: 0 3rem;
+            bottom:40%;
           }
         }
         &-texthidden{
@@ -325,7 +332,7 @@
           &.active{
             visibility: hidden;
             opacity: 0;
-            transition: all .5s;
+            //transition: all .5s;
           }
         }
         &-text{
@@ -426,7 +433,7 @@
 
 .main__menu {
   z-index: 200;
-  position: absolute;
+  position: fixed;
   top: 5rem;
   right: 5rem;
   width: 15rem;
@@ -477,4 +484,7 @@
   font-size: 1.6rem;
   font-family: "Open Sans";
   color: #fff;
+}
+.main__content__box-item-header{
+  transition: transform .3s linear;
 }

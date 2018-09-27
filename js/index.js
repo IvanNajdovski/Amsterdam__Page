@@ -68,6 +68,8 @@ $(document).ready(function () {
                 $(this).children("div").children().addClass("active");
             }else{
                 $(this).children("div").children().removeClass("active");
+                $(this).children("div").children("h1").removeAttr("style");
+
             }
 
         });
@@ -176,6 +178,7 @@ $(document).ready(function () {
        $('.main__content__box-flex').children("a").each(function () {
            if ($(this).hasClass('active')) {
                $(this).children("div").children().removeClass("active");
+               $(this).children("div").children("h1").removeAttr("style");
                $(this).removeClass("active");
            } else {
            }
@@ -200,6 +203,7 @@ $(document).ready(function () {
                 $('.main__content__box-flex').children("a").each(function () {
                     if ($(this).hasClass('active')) {
                         $(this).children("div").children().removeClass("active");
+                        $(this).children("div").children("h1").removeAttr("style");
                         $(this).removeClass("active");
                     } else {
                     }
@@ -223,6 +227,12 @@ $(document).ready(function () {
            $(".arrow__middle").addClass("active");
        }
    });
+   $(window).on("scroll", function(){
+       var scrollVal = $(this).scrollTop();
+
+       $(".main__content__box-item-header.active").css("transform",`translate(0px,-${scrollVal/30}%)`)
+       //$("#logo").animate({"transform": `translate(0px,-${scrollVal/40}%)`},500);
+   })
 
 
 });

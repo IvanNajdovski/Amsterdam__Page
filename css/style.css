@@ -170,7 +170,7 @@ html {
   overflow: hidden;
   position: relative; }
   .main__content__build {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     left: 1rem;
     padding: 3rem;
@@ -327,7 +327,9 @@ html {
     text-decoration: none; }
     .main__content__box a.active {
       flex: 1 0 100%;
-      transition: all .5s; }
+      transition: all .5s linear;
+      position: relative;
+      height: 140vh; }
   .main__content__box-item {
     width: 100%;
     height: 100%;
@@ -348,6 +350,8 @@ html {
     .main__content__box-item:hover > .main__content__box-item-header {
       transform: translateY(0);
       transition: all .5s; }
+      .main__content__box-item:hover > .main__content__box-item-header.active {
+        transform: translateY(70px); }
     .main__content__box-item h1 {
       font-size: 4rem;
       font-weight: 400;
@@ -357,8 +361,12 @@ html {
       transform: translateY(70px);
       transition: all .5s; }
       .main__content__box-item h1.active {
+        font-weight: 600;
         font-size: 10rem;
-        transition: all .5s; }
+        transition: all .5s;
+        position: absolute;
+        padding: 0 3rem;
+        bottom: 40%; }
     .main__content__box-item-texthidden {
       height: 70px;
       visibility: hidden;
@@ -370,8 +378,7 @@ html {
       padding-bottom: 2rem; }
       .main__content__box-item-texthidden.active {
         visibility: hidden;
-        opacity: 0;
-        transition: all .5s; }
+        opacity: 0; }
     .main__content__box-item-text {
       font-family: "Open Sans";
       font-size: 1.4rem;
@@ -443,7 +450,7 @@ html {
 
 .main__menu {
   z-index: 200;
-  position: absolute;
+  position: fixed;
   top: 5rem;
   right: 5rem;
   width: 15rem;
@@ -486,13 +493,16 @@ html {
   font-family: "Open Sans";
   color: #fff; }
 
+.main__content__box-item-header {
+  transition: transform .3s linear; }
+
 .menu__popup {
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   display: flex;
   transition: z-index .5s; }
   .menu__popup.active {
