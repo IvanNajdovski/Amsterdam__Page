@@ -51,7 +51,7 @@ $(document).ready(function () {
             //$(".content__bottom").empty()
         });
 
-        if($(window).width()>600){
+        if($(window).outerWidth()>600){
             if ($(this).hasClass("active")) {
                 $(".content__bottom").removeClass("active")
                 $(".content__bottom").empty()
@@ -102,13 +102,15 @@ $(document).ready(function () {
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
 
     $(window).on("mousewheel DOMMouseScroll", function (e) {
-console.log(fullHeight)
+        // console.log(fullHeight)
+        // console.log("window height is",$(window).innerHeight())
+        // console.log(counterUp)
         if($(window).scrollTop() > 600){
             $(".arrow__middle").removeClass("active");
         }else{
             $(".arrow__middle").addClass("active");
         }
-        if($(window).width()>600){
+        if($(window).outerWidth()>600){
             if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
 
             }else {
@@ -216,23 +218,51 @@ console.log(fullHeight)
     });
     //              -------------------CLICK EVENT FOR THE ARROWS IN THE BOTTOM--------------------
     $(".arrow__right").on("click", function () {
+        if($(window).innerWidth() > 600){
+            if (Math.abs(counterUp) < (width * 10) - $(window).outerWidth()) {
+                counterUp = counterUp - $(window).outerWidth();
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+            } else {
+                counterUp = -width * 10
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+            }
+        }else{
+            if (Math.abs(counterUp) < fullHeight - $(window).innerHeight() -100) {
+                counterUp = counterUp - $(window).innerHeight();
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+            } else {
+                counterUp = -(fullHeight - $(window).innerHeight())
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+            }
+        }
 
-        if (Math.abs(counterUp) < (width * 10) - $(window).outerWidth()) {
-            counterUp = counterUp - $(window).outerWidth();
-            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-        } else {
-            counterUp = -width * 10
-            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-        }
     });
+    // console.log( "window inner height is", $(window).innerHeight())
+    // console.log( "window outer height is", $(window).outerHeight())
+    // console.log( "window inner wight is", $(window).innerWidth())
+    // console.log( "window outer width is", $(window).outerWidth())
+    // console.log("full Height", fullHeight)
+    // console.log("full width", fullWidth)
+    // console.log($(window).innerWidth())
     $(".arrow__left").on("click", function () {
-        if (counterUp < -$(window).outerWidth()) {
-            counterUp = counterUp + $(window).outerWidth();
-            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
-        } else {
-            counterUp = 0
-            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+        if($(window).innerWidth() > 600){
+            if (counterUp < -$(window).outerWidth()) {
+                counterUp = counterUp + $(window).outerWidth();
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+            } else {
+                counterUp = 0
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+            }
+        }else{
+            if (counterUp < -$(window).innerHeight()) {
+                counterUp = counterUp + $(window).innerHeight();
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+            } else {
+                counterUp = 0
+                $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+            }
         }
+
     });
 
 
@@ -270,15 +300,15 @@ console.log(fullHeight)
            $(".main__content__build-header").removeClass("animate")
        });
            //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
-           if ($(window).width > 600) {
-               if (Math.abs(counterUp) + $(window).width() > fullWidth - 100) {
-                   counterUp = fullWidth - $(window).width();
+           if ($(window).outerWidth() > 600) {
+               if (Math.abs(counterUp) + $(window).outerWidth() > fullWidth - 100) {
+                   counterUp = fullWidth - $(window).outerWidth();
                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
                }
 
            } else {
-               if (Math.abs(counterUp) + $(window).height() > fullHeight - 100) {
-                   counterUp = fullHeight - $(window).height();
+               if (Math.abs(counterUp) + $(window).outerHeight() > fullHeight - 100) {
+                   counterUp = fullHeight - $(window).outerHeight();
                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${-counterUp})`);
                }
 
@@ -305,15 +335,15 @@ console.log(fullHeight)
                $(".main__content__build-header").removeClass("animate");
                $(".arrow__middle").addClass("active");
                //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
-               if ($(window).width > 600) {
-                   if (Math.abs(counterUp) + $(window).width() > fullWidth - 100) {
-                       counterUp = fullWidth - $(window).width();
+               if ($(window).outerWidth() > 600) {
+                   if (Math.abs(counterUp) + $(window).outerWidth() > fullWidth - 100) {
+                       counterUp = fullWidth - $(window).outerWidth();
                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
 
                    }
                } else {
-                   if (Math.abs(counterUp) + $(window).height() > fullHeight - 100) {
-                       counterUp = fullHeight - $(window).height();
+                   if (Math.abs(counterUp) + $(window).outerHeight() > fullHeight - 100) {
+                       counterUp = fullHeight - $(window).outerHeight();
                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${-counterUp})`);
                    }
 
