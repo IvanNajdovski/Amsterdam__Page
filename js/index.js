@@ -28,11 +28,14 @@ $(document).ready(function () {
     });
 
     var width = $(".main__link").innerWidth();
+    var height =$(".main__link").innerHeight();
     // console.log(width)
     var flexWidth = $(".main__content__box-flex").children("a");
     var fullWidth = 0
+    var fullHeight = 0;
     for (let item of flexWidth) {
         fullWidth = fullWidth + $(item).innerWidth()
+        fullHeight = fullHeight + $(item).outerHeight()
     }
     let counterUp = 0;
 //        --------------CLICK EVENT FOR THE SECTIONS----------------
@@ -40,6 +43,7 @@ $(document).ready(function () {
 
         $(".main__content__build-header").removeClass("animate")
         var index = $(this).index();
+        itemHight = height * index;
         itemWidth = width * index;
         e.preventDefault()
         $('.main__content__box-flex').children("a").not(this).each(function () {
@@ -67,14 +71,14 @@ $(document).ready(function () {
             if ($(this).hasClass("active")) {
                 $(".content__bottom").removeClass("active")
                 $(".content__bottom").empty()
-                if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
-                    counterUp = fullWidth - $(window).innerWidth();
+                if (Math.abs(counterUp) > fullHeight - $(window).innerHeight()) {
+                    counterUp = fullHeight - $(window).innerHeight();
                     counterUp = -Math.abs(counterUp);
                     $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,0,${counterUp})`);
                     $(".content__bottom").empty()
                 }
             } else {
-                counterUp = itemWidth
+                counterUp = itemHight
                 counterUp = -Math.abs(counterUp)
                 $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,0,${counterUp})`);
                 $(".content__bottom").addClass("active")
@@ -98,7 +102,7 @@ $(document).ready(function () {
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
 
     $(window).on("mousewheel DOMMouseScroll", function (e) {
-
+console.log(fullHeight)
         if($(window).scrollTop() > 600){
             $(".arrow__middle").removeClass("active");
         }else{
@@ -162,12 +166,12 @@ $(document).ready(function () {
             }else {
                 if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                     if (e.originalEvent.detail > 0) {
-                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                        if (Math.abs(counterUp) < fullHeight -$(window).outerHeight()- 100) {
                             counterUp = counterUp - 100;
                             $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0 ,${counterUp})`);
                         }
                         else {
-                            counterUp = fullWidth - $(window).width();
+                            counterUp = fullHeight - $(window).outerHeight();
                             counterUp = -Math.abs(counterUp)
                             $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
                         }
@@ -187,12 +191,12 @@ $(document).ready(function () {
                 }
                 else {
                     if (e.originalEvent.wheelDelta < 0) {
-                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                        if (Math.abs(counterUp) < fullHeight -$(window).innerHeight()- 100) {
                             counterUp = counterUp - 100;
                             $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
                         }
                         else {
-                            counterUp = fullWidth - $(window).width();
+                            counterUp = fullHeight - $(window).height();
                             counterUp = -Math.abs(counterUp)
                             $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
                         }
@@ -254,7 +258,7 @@ $(document).ready(function () {
     }, 4000);
 
 //  ------------------GOING BACK AND RESETING CLASESS---------------------
-   $(".span-arrow").on("click", function(){
+   $(".span-arrow").on("click", function() {
        $('.main__content__box-flex').children("a").each(function () {
            if ($(this).hasClass('active')) {
                $(this).children("div").children().removeClass("active");
@@ -264,45 +268,64 @@ $(document).ready(function () {
            }
            $(".content__bottom").removeClass("active").empty();
            $(".main__content__build-header").removeClass("animate")
-           //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
-           if (Math.abs(counterUp) +$(window).width() > fullWidth - 100) {
-               counterUp = fullWidth -$(window).width();
-               $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
-           }
        });
+           //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
+           if ($(window).width > 600) {
+               if (Math.abs(counterUp) + $(window).width() > fullWidth - 100) {
+                   counterUp = fullWidth - $(window).width();
+                   $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
+               }
 
-   });
-    $(".arrow__middle").on("click", function(){
+           } else {
+               if (Math.abs(counterUp) + $(window).height() > fullHeight - 100) {
+                   counterUp = fullHeight - $(window).height();
+                   $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${-counterUp})`);
+               }
 
-            $('html, body').animate({
-                scrollTop: 0
-            },1000,function(){
+           }
 
-            });
-            setTimeout(function() {
-                $('.main__content__box-flex').children("a").each(function () {
-                    if ($(this).hasClass('active')) {
-                        $(this).children("div").children().removeClass("active");
-                        $(this).children("div").children("h1").removeAttr("style");
-                        $(this).removeClass("active");
-                    } else {
-                    }
-                });
-                $(".content__bottom").removeClass("active").empty();
-                $(".main__content__build-header").removeClass("animate");
-                $(".arrow__middle").addClass("active");
-                //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
-                if (Math.abs(counterUp) +$(window).width() > fullWidth - 100) {
-                    counterUp = fullWidth -$(window).width();
-                    $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
-                }
-            },1000);
-        });
-   $(window).on("scroll", function(){
-       var scrollVal = $(this).scrollTop();
-       $(".main__content__box-item-header.active").css("transform",`translate(0px,-${scrollVal/30}%)`)
+       });
+       $(".arrow__middle").on("click", function () {
 
+           $('html, body').animate({
+               scrollTop: 0
+           }, 1000, function () {
+
+           });
+           setTimeout(function () {
+               $('.main__content__box-flex').children("a").each(function () {
+                   if ($(this).hasClass('active')) {
+                       $(this).children("div").children().removeClass("active");
+                       $(this).children("div").children("h1").removeAttr("style");
+                       $(this).removeClass("active");
+                   } else {
+                   }
+               });
+               $(".content__bottom").removeClass("active").empty();
+               $(".main__content__build-header").removeClass("animate");
+               $(".arrow__middle").addClass("active");
+               //       -------------------NOT GOING OUTSITDE OF CONTENT---------------------
+               if ($(window).width > 600) {
+                   if (Math.abs(counterUp) + $(window).width() > fullWidth - 100) {
+                       counterUp = fullWidth - $(window).width();
+                       $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${-counterUp}, 0)`);
+
+                   }
+               } else {
+                   if (Math.abs(counterUp) + $(window).height() > fullHeight - 100) {
+                       counterUp = fullHeight - $(window).height();
+                       $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${-counterUp})`);
+                   }
+
+               }
+           }, 1000);
+
+
+
+       });
+       $(window).on("scroll", function () {
+           var scrollVal = $(this).scrollTop();
+           $(".main__content__box-item-header.active").css("transform", `translate(0px,-${scrollVal / 30}%)`)
+
+       })
    })
-
-
-});
