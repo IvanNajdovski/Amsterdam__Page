@@ -1,3 +1,18 @@
+
+
+$bp-huge: 100em;                //1600px
+$bp-largest: 87.5em;            //1400px
+$bp-large: 75em;                //1200px
+$bp-large-medium: 62.5em;       //1000px
+$bp-large-small: 50em;          //800px
+$bp-medium: 37.5em;             //600px
+$bp-small: 25em;                //400px
+$bp-smallest: 18.75em;          //300px
+
+
+
+
+
 *,
 *:before,
 *:after{
@@ -8,4 +23,16 @@
 html{
   box-sizing: border-box;
   font-size: 62.5%;
+  @media only screen and(max-width: $bp-largest){
+    font-size: 55%;
+  }
+  @media only screen and(max-width: $bp-large-medium){
+    font-size: 50%;
+  }
+  @media only screen and(max-width: $bp-medium){
+    font-size: 45%;
+  }
+  @media only screen and(max-width: $bp-small){
+    font-size: 40%;
+  }
 }

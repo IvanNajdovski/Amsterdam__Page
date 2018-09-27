@@ -24,6 +24,9 @@
       flex-direction: column;
       flex: 1;
       justify-content: center;
+      @media only screen and(max-width: $bp-medium){
+        padding: 2rem;
+      }
       //align-items: center;
       & h1 {
         font-family: "Open Sans";

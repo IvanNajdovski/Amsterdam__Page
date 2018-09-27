@@ -37,6 +37,7 @@ $(document).ready(function () {
     let counterUp = 0;
 //        --------------CLICK EVENT FOR THE SECTIONS----------------
     $(".main__link").on("click", function (e) {
+
         $(".main__content__build-header").removeClass("animate")
         var index = $(this).index();
         itemWidth = width * index;
@@ -46,22 +47,40 @@ $(document).ready(function () {
             //$(".content__bottom").empty()
         });
 
-
-        if ($(this).hasClass("active")) {
-            $(".content__bottom").removeClass("active")
-            $(".content__bottom").empty()
-            if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
-                counterUp = fullWidth - $(window).innerWidth();
-                counterUp = -Math.abs(counterUp);
-                $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+        if($(window).width()>600){
+            if ($(this).hasClass("active")) {
+                $(".content__bottom").removeClass("active")
                 $(".content__bottom").empty()
+                if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
+                    counterUp = fullWidth - $(window).innerWidth();
+                    counterUp = -Math.abs(counterUp);
+                    $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+                    $(".content__bottom").empty()
+                }
+            } else {
+                counterUp = itemWidth
+                counterUp = -Math.abs(counterUp)
+                $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
+                $(".content__bottom").addClass("active")
             }
-        } else {
-            counterUp = itemWidth
-            counterUp = -Math.abs(counterUp)
-            $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,${counterUp},0)`);
-            $(".content__bottom").addClass("active")
+        }else{
+            if ($(this).hasClass("active")) {
+                $(".content__bottom").removeClass("active")
+                $(".content__bottom").empty()
+                if (Math.abs(counterUp) > fullWidth - $(window).innerWidth()) {
+                    counterUp = fullWidth - $(window).innerWidth();
+                    counterUp = -Math.abs(counterUp);
+                    $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,0,${counterUp})`);
+                    $(".content__bottom").empty()
+                }
+            } else {
+                counterUp = itemWidth
+                counterUp = -Math.abs(counterUp)
+                $(".main__content__box-flex").css("transform", `matrix(1,0,0,1,0,${counterUp})`);
+                $(".content__bottom").addClass("active")
+            }
         }
+
         $(this).toggleClass("active")
         $('.main__content__box-flex').children("a").each(function () {
             if($(this).hasClass('active')){
@@ -79,65 +98,121 @@ $(document).ready(function () {
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
 
     $(window).on("mousewheel DOMMouseScroll", function (e) {
+
         if($(window).scrollTop() > 600){
             $(".arrow__middle").removeClass("active");
         }else{
             $(".arrow__middle").addClass("active");
         }
+        if($(window).width()>600){
+            if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
 
-        if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
+            }else {
+                if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                    if (e.originalEvent.detail > 0) {
+                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                            counterUp = counterUp - 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        }
+                        else {
+                            counterUp = fullWidth - $(window).width();
+                            counterUp = -Math.abs(counterUp)
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        }
 
-        }else {
-            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-                if (e.originalEvent.detail > 0) {
-                    if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
-                        counterUp = counterUp - 100;
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+
                     }
                     else {
-                        counterUp = fullWidth - $(window).width();
-                        counterUp = -Math.abs(counterUp)
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        if (counterUp < 0) {
+                            counterUp = counterUp + 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        } else {
+                            counterUp = 0
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        }
+
                     }
-
-
                 }
                 else {
-                    if (counterUp < 0) {
-                        counterUp = counterUp + 100;
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                    if (e.originalEvent.wheelDelta < 0) {
+                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                            counterUp = counterUp - 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        }
+                        else {
+                            counterUp = fullWidth - $(window).width();
+                            counterUp = -Math.abs(counterUp)
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        }
                     } else {
-                        counterUp = 0
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        if (counterUp < 0) {
+                            counterUp = counterUp + 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        } else {
+                            counterUp = 0
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        }
                     }
-
                 }
             }
-            else {
-                if (e.originalEvent.wheelDelta < 0) {
-                    if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
-                        counterUp = counterUp - 100;
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+
+        }else{
+            if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
+
+            }else {
+                if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                    if (e.originalEvent.detail > 0) {
+                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                            counterUp = counterUp - 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0 ,${counterUp})`);
+                        }
+                        else {
+                            counterUp = fullWidth - $(window).width();
+                            counterUp = -Math.abs(counterUp)
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+                        }
+
+
                     }
                     else {
-                        counterUp = fullWidth - $(window).width();
-                        counterUp = -Math.abs(counterUp)
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                        if (counterUp < 0) {
+                            counterUp = counterUp + 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+                        } else {
+                            counterUp = 0
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        }
+
                     }
-                } else {
-                    if (counterUp < 0) {
-                        counterUp = counterUp + 100;
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
+                }
+                else {
+                    if (e.originalEvent.wheelDelta < 0) {
+                        if (Math.abs(counterUp) < fullWidth -$(window).width()- 100) {
+                            counterUp = counterUp - 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+                        }
+                        else {
+                            counterUp = fullWidth - $(window).width();
+                            counterUp = -Math.abs(counterUp)
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+                        }
                     } else {
-                        counterUp = 0
-                        $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        if (counterUp < 0) {
+                            counterUp = counterUp + 100;
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
+                        } else {
+                            counterUp = 0
+                            $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,0, 0)`);
+                        }
                     }
                 }
             }
         }
+
     });
     //              -------------------CLICK EVENT FOR THE ARROWS IN THE BOTTOM--------------------
     $(".arrow__right").on("click", function () {
+
         if (Math.abs(counterUp) < (width * 10) - $(window).outerWidth()) {
             counterUp = counterUp - $(window).outerWidth();
             $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1,${counterUp}, 0)`);
