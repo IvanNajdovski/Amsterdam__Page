@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 
     var width = $(".main__link").innerWidth();
-    console.log(width)
+    // console.log(width)
     var flexWidth = $(".main__content__box-flex").children("a");
     var fullWidth = 0
     for (let item of flexWidth) {
@@ -79,6 +79,11 @@ $(document).ready(function () {
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
 
     $(window).on("mousewheel DOMMouseScroll", function (e) {
+        if($(window).scrollTop() > 600){
+            $(".arrow__middle").removeClass("active");
+        }else{
+            $(".arrow__middle").addClass("active");
+        }
 
         if ($("body,html").outerHeight() - 100 > $(window).outerHeight()) {
 
@@ -218,20 +223,10 @@ $(document).ready(function () {
                 }
             },1000);
         });
-
-
-   $(window).on("mousewheel",function(){
-       if($(window).scrollTop() > 600){
-           $(".arrow__middle").removeClass("active");
-       }else{
-           $(".arrow__middle").addClass("active");
-       }
-   });
    $(window).on("scroll", function(){
        var scrollVal = $(this).scrollTop();
-
        $(".main__content__box-item-header.active").css("transform",`translate(0px,-${scrollVal/30}%)`)
-       //$("#logo").animate({"transform": `translate(0px,-${scrollVal/40}%)`},500);
+
    })
 
 
