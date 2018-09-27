@@ -540,6 +540,9 @@ html {
   position: fixed;
   display: flex;
   transition: z-index .5s; }
+  @media only screen and (max-width: 37.5em) {
+    .menu__popup {
+      flex-direction: column; } }
   .menu__popup.active {
     z-index: 100; }
   .menu__popup__item-box.active {
@@ -551,6 +554,9 @@ html {
     display: flex;
     height: 100vh;
     justify-content: flex-end; }
+    @media only screen and (max-width: 37.5em) {
+      .menu__popup__item {
+        height: 33.4vh; } }
     .menu__popup__item.reverse {
       justify-content: flex-start; }
     .menu__popup__item-box {
@@ -560,6 +566,10 @@ html {
       align-items: center;
       overflow: hidden;
       transition: all .5s; }
+      @media only screen and (max-width: 37.5em) {
+        .menu__popup__item-box {
+          height: 33.4vh;
+          padding: 0 4rem; } }
       .menu__popup__item-box-1 {
         background-image: linear-gradient(to right, #222224, #222224); }
       .menu__popup__item-box-2 {
@@ -577,11 +587,18 @@ html {
         font-size: 5rem;
         font-weight: 600;
         visibility: hidden;
-        display: block;
         color: #fff;
         overflow: hidden;
         height: 6rem;
         display: none; }
+        @media only screen and (max-width: 37.5em) {
+          .menu__popup__item-box-sudo {
+            display: block;
+            overflow: visible;
+            visibility: visible; }
+            .menu__popup__item-box-sudo a {
+              color: inherit;
+              text-decoration: none; } }
         .menu__popup__item-box-sudo.active {
           display: block; }
         .menu__popup__item-box-sudo-1:after {
@@ -605,6 +622,10 @@ html {
           font-weight: 600;
           visibility: visible;
           transition: all .5s; }
+          @media only screen and (max-width: 37.5em) {
+            .menu__popup__item-box-sudo:after {
+              display: none;
+              visibility: hidden; } }
         .menu__popup__item-box-sudo:before {
           display: block;
           color: #fff;
@@ -613,8 +634,15 @@ html {
           font-weight: 600;
           visibility: visible;
           transition: all .5s; }
+          @media only screen and (max-width: 37.5em) {
+            .menu__popup__item-box-sudo:before {
+              display: none;
+              visibility: hidden; } }
       .menu__popup__item-box-wrapper {
         padding: 4rem; }
+        @media only screen and (max-width: 37.5em) {
+          .menu__popup__item-box-wrapper {
+            padding: 1rem; } }
       .menu__popup__item-box h1:after {
         content: inherit;
         display: block; }
@@ -629,6 +657,11 @@ html {
   transform: translateY(3rem);
   opacity: 0;
   visibility: hidden; }
+  @media only screen and (max-width: 37.5em) {
+    .menu__popup__item-box-text {
+      opacity: 100;
+      visibility: visible;
+      transform: translateY(0); } }
   .menu__popup__item-box-text.active {
     transform: translateY(0);
     opacity: 100;
@@ -648,6 +681,11 @@ html {
   transform: translateY(3rem);
   opacity: 0;
   visibility: hidden; }
+  @media only screen and (max-width: 37.5em) {
+    .menu__popup__item-box-btn {
+      opacity: 100;
+      visibility: visible;
+      transform: translateY(0); } }
   .menu__popup__item-box-btn.active {
     transform: translateY(0);
     opacity: 100;
@@ -669,11 +707,17 @@ html {
   justify-content: flex-end;
   align-items: center;
   letter-spacing: 0.2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .animation {
+      flex-wrap: wrap; } }
   .animation__banner {
     flex: 0 0 33.3333%;
     height: 100%;
     display: flex;
     justify-content: flex-end; }
+    @media only screen and (max-width: 37.5em) {
+      .animation__banner {
+        flex: 0 0 100%; } }
     .animation__banner-box {
       background-color: black;
       flex: 0 0 100%;
@@ -695,6 +739,49 @@ html {
     justify-items: flex-start;
     padding: 0 6rem;
     flex-wrap: wrap; }
+    @media only screen and (max-width: 1700px) {
+      .animation h1 {
+        padding: 0 8rem; } }
+    @media only screen and (max-width: 100em) {
+      .animation h1 {
+        font-size: 10rem; } }
+    @media only screen and (max-width: 1500px) {
+      .animation h1 {
+        padding: 0 6rem; } }
+    @media only screen and (max-width: 87.5em) {
+      .animation h1 {
+        padding: 0 8rem; } }
+    @media only screen and (max-width: 1300px) {
+      .animation h1 {
+        padding: 0 5rem; } }
+    @media only screen and (max-width: 75em) {
+      .animation h1 {
+        padding: 0 4rem; } }
+    @media only screen and (max-width: 1186px) {
+      .animation h1 {
+        padding: 0 3rem; } }
+    @media only screen and (max-width: 1085px) {
+      .animation h1 {
+        padding: 0 10rem; } }
+    @media only screen and (max-width: 1019px) {
+      .animation h1 {
+        padding: 0 6rem; } }
+    @media only screen and (max-width: 917px) {
+      .animation h1 {
+        padding: 0 3.5rem; } }
+    @media only screen and (max-width: 833px) {
+      .animation h1 {
+        font-size: 7rem;
+        padding: 0 0rem; } }
+    @media only screen and (max-width: 917px) {
+      .animation h1 {
+        padding: 0 3.5rem; } }
+    @media only screen and (max-width: 500px) {
+      .animation h1 {
+        padding: 0 1rem; } }
+    @media only screen and (max-width: 459px) {
+      .animation h1 {
+        padding: 0 0; } }
     .animation h1 span {
       display: flex;
       justify-content: center;
@@ -703,6 +790,27 @@ html {
       width: 8rem;
       height: 17rem;
       overflow: hidden; }
+      @media only screen and (max-width: 1500px) {
+        .animation h1 span {
+          width: 8rem; } }
+      @media only screen and (max-width: 87.5em) {
+        .animation h1 span {
+          width: 6rem; } }
+      @media only screen and (max-width: 1160px) {
+        .animation h1 span {
+          width: 5.5rem; } }
+      @media only screen and (max-width: 833px) {
+        .animation h1 span {
+          width: 5rem; } }
+      @media only screen and (max-width: 766px) {
+        .animation h1 span {
+          width: 4rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .animation h1 span {
+          width: 3.5rem; } }
+      @media only screen and (max-width: 433px) {
+        .animation h1 span {
+          width: 3rem; } }
       .animation h1 span:before {
         display: block;
         color: #fff;
@@ -846,16 +954,49 @@ html {
 
 .span-small {
   width: 6rem !important; }
+  @media only screen and (max-width: 1240px) {
+    .span-small {
+      width: 5rem !important; } }
+  @media only screen and (max-width: 669px) {
+    .span-small {
+      width: 3.8rem !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .span-small {
+      width: 3.5rem !important; } }
 
 .span-xs {
   width: 4rem !important; }
+  @media only screen and (max-width: 669px) {
+    .span-xs {
+      width: 3rem !important; } }
+  @media only screen and (max-width: 634px) {
+    .span-xs {
+      width: 2rem !important; } }
 
 .span-big {
   width: 12rem !important; }
+  @media only screen and (max-width: 1500px) {
+    .span-big {
+      width: 10rem !important; } }
+  @media only screen and (max-width: 1240px) {
+    .span-big {
+      width: 8rem !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .span-big {
+      width: 6rem !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .span-big {
+      width: 5rem !important; } }
 
 .span-space {
   width: 5rem;
   height: 5rem; }
+  @media only screen and (max-width: 75em) {
+    .span-space {
+      width: 3rem; } }
+  @media only screen and (max-width: 507px) {
+    .span-space {
+      width: 1.5rem; } }
 
 .span-1:before {
   content: "S"; }

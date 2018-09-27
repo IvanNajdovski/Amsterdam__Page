@@ -11,11 +11,17 @@
   //background-color: black;
   //padding: 5rem 14rem 0 14rem;
   letter-spacing: 0.2rem;
+  @media only screen and(max-width: $bp-medium){
+    flex-wrap: wrap;
+  }
   &__banner{
     flex: 0 0 33.3333%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    @media only screen and(max-width: $bp-medium){
+      flex: 0 0 100%;
+    }
 
     &-box{
       background-color: black;
@@ -41,6 +47,49 @@
     display: flex;
     justify-items: flex-start;
     padding: 0 6rem;
+    @media only screen and(max-width: 1700px){
+      padding: 0 8rem  ;
+    }
+    @media only screen and(max-width: $bp-huge){
+      font-size: 10rem;
+    }
+    @media only screen and(max-width: 1500px){
+      padding: 0 6rem  ;
+    }
+    @media only screen and(max-width: $bp-largest){
+      padding: 0 8rem  ;
+    }
+    @media only screen and(max-width: 1300px){
+      padding: 0 5rem  ;
+    }
+    @media only screen and(max-width: $bp-large){
+      padding: 0 4rem ;
+    }
+    @media only screen and(max-width: 1186px){
+      padding: 0 3rem ;
+    }
+    @media only screen and(max-width: 1085px){
+      padding: 0 10rem ;
+    }
+    @media only screen and(max-width: 1019px){
+      padding: 0 6rem ;
+    }
+    @media only screen and(max-width: 917px){
+      padding: 0 3.5rem ;
+    }
+    @media only screen and(max-width: 833px){
+      font-size: 7rem;
+      padding: 0 0rem ;
+    }
+    @media only screen and(max-width: 917px){
+      padding: 0 3.5rem ;
+    }
+    @media only screen and(max-width: 500px){
+      padding: 0 1rem ;
+    }
+    @media only screen and(max-width: 459px){
+      padding: 0 0 ;
+    }
 
     flex-wrap: wrap;
     & span{
@@ -51,6 +100,29 @@
       width: 8rem;
       height: 17rem;
       overflow: hidden;
+      @media only screen and(max-width: 1500px){
+        width: 8rem;
+      }
+      @media only screen and(max-width: $bp-largest){
+        width: 6rem;
+      }
+      @media only screen and(max-width: 1160px){
+        width: 5.5rem;
+      }
+      @media only screen and(max-width: 833px){
+        width: 5rem;
+      }
+      @media only screen and(max-width: 766px){
+        width: 4rem;
+      }
+      @media only screen and(max-width: $bp-medium){
+        width: 3.5rem ;
+      }
+      @media only screen and(max-width: 433px){
+        width: 3rem ;
+      }
+      //433
+      //766
       &:before{
         //content: contents;
         display: block;
@@ -305,16 +377,53 @@
 .span{
   &-small{
     width: 6rem !important;
+    @media only screen and(max-width: 1240px){
+      width:5rem !important;
+    }
+    @media only screen and(max-width: 669px){
+      width: 3.8rem !important;
+    }
+    @media only screen and(max-width: $bp-medium){
+      width: 3.5rem !important;
+    }
   }
+  //669
   &-xs{
     width: 4rem !important;
+    @media only screen and(max-width: 669px){
+      width: 3rem !important;
+    }
+    @media only screen and(max-width: 634px){
+      width: 2rem !important;
+    }
+
   }
   &-big{
     width: 12rem !important;
+    @media only screen and(max-width: 1500px){
+      width: 10rem !important;
+
+    }
+    @media only screen and(max-width: 1240px){
+      width: 8rem !important;
+    }
+    @media only screen and(max-width: $bp-medium){
+      width: 6rem !important;
+    }
+    @media only screen and(max-width: $bp-medium){
+      width: 5rem !important;
+    }
+
   }
   &-space{
     width: 5rem;
     height: 5rem;
+    @media only screen and(max-width: $bp-large){
+      width: 3rem;
+    }
+    @media only screen and(max-width: 507px){
+      width: 1.5rem ;
+    }
   }
   &-1{
     &:before {
