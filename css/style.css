@@ -45,10 +45,16 @@ html {
     .arrow__left-content:hover {
       width: 15rem;
       transition: width .5s; }
+      @media only screen and (max-width: 37.5em) {
+        .arrow__left-content:hover {
+          width: 5rem; } }
     .arrow__left-content:hover > .arrow__left-text {
       opacity: 100;
       transition: opacity .1s;
       transition-delay: .3s; }
+      @media only screen and (max-width: 37.5em) {
+        .arrow__left-content:hover > .arrow__left-text {
+          opacity: 0; } }
   .arrow__left-text {
     position: absolute;
     color: #fff;
@@ -126,10 +132,16 @@ html {
     .arrow__right-content:hover {
       width: 15rem;
       transition: width .5s; }
+      @media only screen and (max-width: 37.5em) {
+        .arrow__right-content:hover {
+          width: 5rem; } }
     .arrow__right-content:hover > .arrow__right-text {
       opacity: 100;
       transition: opacity .1s;
       transition-delay: .3s; }
+      @media only screen and (max-width: 37.5em) {
+        .arrow__right-content:hover > .arrow__right-text {
+          opacity: 0; } }
   .arrow__right-text {
     position: absolute;
     color: #fff;

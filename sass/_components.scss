@@ -25,11 +25,17 @@
     &:hover{
       width: 15rem;
       transition: width .5s;
+      @media only screen and(max-width: $bp-medium){
+        width: 5rem;
+      }
     }
     &:hover > .arrow__left-text{
       opacity: 100;
       transition: opacity .1s;
       transition-delay: .3s;
+      @media only screen and(max-width: $bp-medium){
+        opacity: 0;
+      }
     }
   }
   &-text{
@@ -128,11 +134,17 @@
     &:hover{
       width: 15rem;
       transition: width .5s;
+      @media only screen and(max-width: $bp-medium){
+        width: 5rem;
+      }
     }
     &:hover > .arrow__right-text{
       opacity: 100;
       transition: opacity .1s;
       transition-delay: .3s;
+      @media only screen and(max-width: $bp-medium){
+        opacity: 0;
+      }
     }
   }
   &-text{
