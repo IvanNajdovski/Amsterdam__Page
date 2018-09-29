@@ -582,13 +582,13 @@ html {
     flex: 0 0 100%;
     transition: all .5s ease-out; }
   .menu__popup__item {
-    flex: 0 0 33.33%;
+    flex: 0 1 33.33%;
     display: flex;
     height: 100vh;
     justify-content: flex-end; }
     @media only screen and (max-width: 37.5em) {
       .menu__popup__item {
-        height: 33.4vh; } }
+        height: 30%; } }
     .menu__popup__item.reverse {
       justify-content: flex-start; }
     .menu__popup__item-box {

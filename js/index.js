@@ -228,10 +228,10 @@ $(document).ready(function () {
             }
         }else{
             if (Math.abs(counterUp) < fullHeight - $(window).innerHeight() -100) {
-                counterUp = counterUp - $(window).innerHeight();
+                counterUp = counterUp - $(window).outerHeight();
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
             } else {
-                counterUp = -(fullHeight - $(window).innerHeight())
+                counterUp = -(fullHeight - $(window).outerHeight())
                 $(".main__content__box-flex").css("transform", `matrix(1, 0, 0, 1, 0,${counterUp})`);
             }
         }

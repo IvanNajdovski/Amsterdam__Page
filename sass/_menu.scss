@@ -26,7 +26,7 @@
     height: 100vh;
     justify-content: flex-end;
     @media only screen and(max-width: $bp-medium){
-      height: 33.4vh;;
+      flex: 1 1 25%%;
     }
     //
     &.reverse{
