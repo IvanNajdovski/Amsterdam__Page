@@ -262,7 +262,7 @@
         flex: 0 0 100%;
         @media only screen and(max-width: $bp-medium){
           flex-direction: column;
-          height: 100vh;
+          height: content-box;
         }
       }
       & a{
@@ -286,8 +286,8 @@
         color: inherit;
         text-decoration: none;
         @media only screen and(max-width: $bp-medium){
-          height: 50vh;
-          flex: 1 0 33.33%;
+         // height: 70vh;
+          flex: 1 0 50%;
           width: 100%;
         }
 
