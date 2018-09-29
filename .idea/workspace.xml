@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcfb5036-beae-4015-a858-be18ed33bd25" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/sass/_firstAnimation.scss" afterPath="$PROJECT_DIR$/sass/_firstAnimation.scss" />
       <change beforePath="$PROJECT_DIR$/sass/_menu.scss" afterPath="$PROJECT_DIR$/sass/_menu.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,14 +60,14 @@
           <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_content.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
+                <state relative-caret-position="5523">
                   <caret line="263" column="12" lean-forward="false" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_menu.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_menu.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_menu.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="588">
@@ -78,21 +80,21 @@
           <file leaf-file-name="_components.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_components.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1241">
+                <state relative-caret-position="3045">
                   <caret line="145" column="18" lean-forward="false" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_firstAnimation.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_firstAnimation.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sass/_firstAnimation.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1176">
-                  <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+                <state relative-caret-position="532">
+                  <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
                   <folding>
-                    <marker date="1538139353490" expanded="true" signature="342:354" ph="{...}" />
-                    <marker date="1538139353490" expanded="true" signature="6918:6940" ph="{...}" />
+                    <marker date="1538221935799" expanded="true" signature="342:354" ph="{...}" />
+                    <marker date="1538221935799" expanded="true" signature="6918:6940" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -101,7 +103,7 @@
           <file leaf-file-name="_awards.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_awards.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
+                <state relative-caret-position="483">
                   <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
                   <folding />
                 </state>
@@ -111,7 +113,7 @@
           <file leaf-file-name="_info.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_info.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
+                <state relative-caret-position="210">
                   <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
                   <folding />
                 </state>
@@ -121,7 +123,7 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="409">
+                <state relative-caret-position="4830">
                   <caret line="230" column="55" lean-forward="false" selection-start-line="230" selection-start-column="55" selection-end-line="230" selection-end-column="55" />
                   <folding />
                 </state>
@@ -150,12 +152,12 @@
         <option value="$PROJECT_DIR$/sass/_base.scss" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/sass/_info.scss" />
-        <option value="$PROJECT_DIR$/sass/_firstAnimation.scss" />
         <option value="$PROJECT_DIR$/sass/_awards.scss" />
         <option value="$PROJECT_DIR$/sass/_components.scss" />
         <option value="$PROJECT_DIR$/sass/_content.scss" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/sass/_menu.scss" />
+        <option value="$PROJECT_DIR$/sass/_firstAnimation.scss" />
       </list>
     </option>
   </component>
@@ -187,11 +189,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,12 +330,13 @@
       <workItem from="1538124527176" duration="56000" />
       <workItem from="1538131444370" duration="8456000" />
       <workItem from="1538148815250" duration="240000" />
-      <workItem from="1538216757247" duration="2092000" />
+      <workItem from="1538216757247" duration="2725000" />
+      <workItem from="1538221916656" duration="20000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155516000" />
+    <option name="totallyTimeSpent" value="156169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -346,8 +349,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -357,8 +360,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -390,8 +393,8 @@
         <state relative-caret-position="442">
           <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
-            <marker date="1538139353490" expanded="true" signature="342:354" ph="{...}" />
-            <marker date="1538139353490" expanded="true" signature="6918:6940" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="342:354" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="6918:6940" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -483,8 +486,8 @@
         <state relative-caret-position="5691">
           <caret line="271" column="29" lean-forward="false" selection-start-line="271" selection-start-column="29" selection-end-line="271" selection-end-column="29" />
           <folding>
-            <marker date="1538139353490" expanded="true" signature="342:354" ph="{...}" />
-            <marker date="1538139353490" expanded="true" signature="6918:6940" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="342:354" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="6918:6940" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -560,8 +563,8 @@
         <state relative-caret-position="735">
           <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
-            <marker date="1538139353490" expanded="true" signature="342:354" ph="{...}" />
-            <marker date="1538139353490" expanded="true" signature="6918:6940" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="342:354" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="6918:6940" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -715,20 +718,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_info.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="210">
           <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_firstAnimation.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <marker date="1538139353490" expanded="true" signature="342:354" ph="{...}" />
-            <marker date="1538139353490" expanded="true" signature="6918:6940" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,7 +733,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_awards.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="483">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding />
         </state>
@@ -770,7 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_components.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
+        <state relative-caret-position="3045">
           <caret line="145" column="18" lean-forward="false" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
           <folding />
         </state>
@@ -778,7 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_content.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="5523">
           <caret line="263" column="12" lean-forward="false" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="12" />
           <folding />
         </state>
@@ -786,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="4830">
           <caret line="230" column="55" lean-forward="false" selection-start-line="230" selection-start-column="55" selection-end-line="230" selection-end-column="55" />
           <folding />
         </state>
@@ -797,6 +789,17 @@
         <state relative-caret-position="588">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_firstAnimation.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+          <folding>
+            <marker date="1538221935799" expanded="true" signature="342:354" ph="{...}" />
+            <marker date="1538221935799" expanded="true" signature="6918:6940" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
