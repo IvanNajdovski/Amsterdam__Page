@@ -32,6 +32,10 @@ html {
   height: 5rem;
   width: 15rem;
   border-radius: 2.5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .arrow__left {
+      bottom: 2rem;
+      left: 2rem; } }
   .arrow__left-content {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     width: 5rem;
@@ -104,9 +108,13 @@ html {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 5rem;
-  width: 15rem;
+  bottom: 2rem;
+  right: 2rem;
   border-radius: 50%; }
+  @media only screen and (max-width: 37.5em) {
+    .arrow__right {
+      bottom: 2rem;
+      left: 2rem; } }
   .arrow__right-content {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     width: 5rem;
@@ -187,6 +195,9 @@ html {
     left: 1rem;
     padding: 3rem;
     z-index: 300; }
+    @media only screen and (max-width: 37.5em) {
+      .main__content__build {
+        padding: 1rem; } }
     .main__content__build-header {
       position: relative;
       color: #fff;
@@ -316,7 +327,7 @@ html {
         background-color: inherit;
         height: 2px;
         width: 2rem;
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.7rem);
         transition: all .5s; }
       .main__content__menu-btn-style:after {
         content: "";
@@ -351,7 +362,8 @@ html {
           height: 100vh; } }
     @media only screen and (max-width: 37.5em) {
       .main__content__box a {
-        flex: 1 0 100%;
+        height: 50vh;
+        flex: 1 0 33.33%;
         width: 100%; } }
   .main__content__box-item {
     width: 100%;
@@ -363,7 +375,7 @@ html {
     transition: height .3s; }
     @media only screen and (max-width: 62.5em) {
       .main__content__box-item {
-        padding: 0 2rem 6rem 2rem; } }
+        padding: 0 2rem 2rem 2rem; } }
     .main__content__box-item:hover > .main__content__box-item-texthidden {
       visibility: visible;
       opacity: 100;
@@ -376,6 +388,9 @@ html {
     .main__content__box-item:hover > .main__content__box-item-header {
       transform: translateY(0);
       transition: all .5s; }
+      @media only screen and (max-width: 62.5em) {
+        .main__content__box-item:hover > .main__content__box-item-header {
+          transform: translateY(10px); } }
       .main__content__box-item:hover > .main__content__box-item-header.active {
         transform: translateY(70px); }
     .main__content__box-item h1 {
@@ -403,7 +418,6 @@ html {
           .main__content__box-item h1.active {
             font-size: 3rem; } }
     .main__content__box-item-texthidden {
-      height: 70px;
       visibility: hidden;
       opacity: 0;
       font-family: "Open Sans";
@@ -411,6 +425,9 @@ html {
       font-weight: 600;
       color: #fff;
       padding-bottom: 2rem; }
+      @media only screen and (max-width: 62.5em) {
+        .main__content__box-item-texthidden {
+          height: 60px; } }
       .main__content__box-item-texthidden.active {
         visibility: hidden;
         opacity: 0; }
@@ -492,6 +509,10 @@ html {
   border-radius: 2.5rem;
   display: flex;
   justify-content: flex-end; }
+  @media only screen and (max-width: 37.5em) {
+    .main__menu {
+      top: 2rem;
+      right: 2rem; } }
 
 .main__content__menu-btn:hover > .main__content__menu-btn-style {
   transform: rotate(90deg) translateY(0);
@@ -595,7 +616,8 @@ html {
           .menu__popup__item-box-sudo {
             display: block;
             overflow: visible;
-            visibility: visible; }
+            visibility: visible;
+            height: 4rem; }
             .menu__popup__item-box-sudo a {
               color: inherit;
               text-decoration: none; } }
@@ -711,7 +733,7 @@ html {
     .animation {
       flex-wrap: wrap; } }
   .animation__banner {
-    flex: 0 0 33.3333%;
+    flex: 1 0 33.33%;
     height: 100%;
     display: flex;
     justify-content: flex-end; }
@@ -726,267 +748,216 @@ html {
         flex: 0 0 0%;
         transition-timing-function: ease-in-out;
         transition: all 1s; }
-  .animation h1 {
+  .animation__flex-container {
+    display: flex; }
+  .animation__text__main {
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 5%;
     transform: translate(0, -50%);
     color: #fff;
     font-family: "Open Sans";
+    display: flex;
+    height: 20rem;
     font-weight: 600;
     font-size: 13rem;
-    display: flex;
-    justify-items: flex-start;
     padding: 0 6rem;
     flex-wrap: wrap; }
-    @media only screen and (max-width: 1700px) {
-      .animation h1 {
-        padding: 0 8rem; } }
-    @media only screen and (max-width: 100em) {
-      .animation h1 {
-        font-size: 10rem; } }
-    @media only screen and (max-width: 1500px) {
-      .animation h1 {
-        padding: 0 6rem; } }
-    @media only screen and (max-width: 87.5em) {
-      .animation h1 {
-        padding: 0 8rem; } }
-    @media only screen and (max-width: 1300px) {
-      .animation h1 {
-        padding: 0 5rem; } }
-    @media only screen and (max-width: 75em) {
-      .animation h1 {
-        padding: 0 4rem; } }
-    @media only screen and (max-width: 1186px) {
-      .animation h1 {
+    @media only screen and (max-width: 37.5em) {
+      .animation__text__main {
         padding: 0 3rem; } }
-    @media only screen and (max-width: 1085px) {
-      .animation h1 {
-        padding: 0 10rem; } }
-    @media only screen and (max-width: 1019px) {
-      .animation h1 {
-        padding: 0 6rem; } }
-    @media only screen and (max-width: 917px) {
-      .animation h1 {
-        padding: 0 3.5rem; } }
-    @media only screen and (max-width: 833px) {
-      .animation h1 {
-        font-size: 7rem;
-        padding: 0 0rem; } }
-    @media only screen and (max-width: 917px) {
-      .animation h1 {
-        padding: 0 3.5rem; } }
-    @media only screen and (max-width: 500px) {
-      .animation h1 {
-        padding: 0 1rem; } }
-    @media only screen and (max-width: 459px) {
-      .animation h1 {
-        padding: 0 0; } }
-    .animation h1 span {
-      display: flex;
-      justify-content: center;
-      justify-self: center;
-      visibility: hidden;
-      width: 8rem;
-      height: 17rem;
-      overflow: hidden; }
-      @media only screen and (max-width: 1500px) {
-        .animation h1 span {
-          width: 8rem; } }
-      @media only screen and (max-width: 87.5em) {
-        .animation h1 span {
-          width: 6rem; } }
-      @media only screen and (max-width: 1160px) {
-        .animation h1 span {
-          width: 5.5rem; } }
-      @media only screen and (max-width: 833px) {
-        .animation h1 span {
-          width: 5rem; } }
-      @media only screen and (max-width: 766px) {
-        .animation h1 span {
-          width: 4rem; } }
-      @media only screen and (max-width: 37.5em) {
-        .animation h1 span {
-          width: 3.5rem; } }
-      @media only screen and (max-width: 433px) {
-        .animation h1 span {
-          width: 3.5rem; } }
-      .animation h1 span:before {
-        display: block;
+    .animation__text__main div {
+      font-size: inherit; }
+      .animation__text__main div span {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        visibility: hidden;
+        font-size: 10rem;
         color: #fff;
-        visibility: visible;
-        transform: translate(50%, 150px);
-        transition: all .3s; }
-      .animation h1 span.active:before {
-        transform: translateX(60px); }
-  .animation.hover > h1 > span:before {
-    transform: translate(55%, 0); }
-  .animation.hover > h1 > .span-1:before {
+        width: 7rem;
+        height: 12rem;
+        overflow: hidden; }
+        @media only screen and (max-width: 1500px) {
+          .animation__text__main div span {
+            font-size: 8rem;
+            width: 5rem;
+            height: 9rem; } }
+        @media only screen and (max-width: 1500px) {
+          .animation__text__main div span {
+            font-size: 6rem;
+            width: 4rem;
+            height: 7rem; } }
+        .animation__text__main div span:before {
+          display: inline-block;
+          color: #fff;
+          visibility: visible;
+          transform: translate(50%, 80px);
+          transition: all .3s; }
+        .animation__text__main div span.active:before {
+          transform: translateX(60px); }
+  .animation.hover > .animation__text__main > .animation__flex-container > span:before {
+    transform: translate(55%, -15px); }
+    @media only screen and (max-width: 500px) {
+      .animation.hover > .animation__text__main > .animation__flex-container > span:before {
+        transform: translate(55%, -5px); } }
+  .animation.hover > div > div > .span-1:before {
     content: "S";
     transition: all .1s; }
-  .animation.hover > h1 > .span-2:before {
+  .animation.hover > div > div > .span-2:before {
     content: "t";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-3:before {
+  .animation.hover > div > div > .span-3:before {
     content: "r";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-4:before {
+  .animation.hover > div > div > .span-4:before {
     content: "a";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-5:before {
+  .animation.hover > div > div > .span-5:before {
     content: "t";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-6:before {
+  .animation.hover > div > div > .span-6:before {
     content: "e";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-7:before {
+  .animation.hover > div > div > .span-7:before {
     content: "g";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-8:before {
+  .animation.hover > div > div > .span-8:before {
     content: "y";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-9:before {
+  .animation.hover > div > div > .span-9:before {
     content: "";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-10:before {
+  .animation.hover > div > div > .span-10:before {
     content: "B";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-11:before {
+  .animation.hover > div > div > .span-11:before {
     content: "r";
     transition: all .4s;
     transition-delay: .5s; }
-  .animation.hover > h1 > .span-12:before {
+  .animation.hover > div > div > .span-12:before {
     content: "a";
     transition: all .4s;
     transition-delay: .3s; }
-  .animation.hover > h1 > .span-13:before {
+  .animation.hover > div > div > .span-13:before {
     content: "n";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-14:before {
+  .animation.hover > div > div > .span-14:before {
     transition: all .4s;
     transition-delay: .52s; }
-  .animation.hover > h1 > .span-15:before {
+  .animation.hover > div > div > .span-15:before {
     content: "i";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-16:before {
+  .animation.hover > div > div > .span-16:before {
     content: "n";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-17:before {
+  .animation.hover > div > div > .span-17:before {
     content: "g";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-18:before {
+  .animation.hover > div > div > .span-18:before {
     content: "";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-19:before {
+  .animation.hover > div > div > .span-19:before {
     content: "a";
     transition: all .4s;
     transition-delay: .3s; }
-  .animation.hover > h1 > .span-20:before {
+  .animation.hover > div > div > .span-20:before {
     content: "n";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-21:before {
+  .animation.hover > div > div > .span-21:before {
     content: "d";
     transition: all .4s;
     transition-delay: .5s; }
-  .animation.hover > h1 > .span-22:before {
+  .animation.hover > div > div > .span-22:before {
     content: "";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-23:before {
+  .animation.hover > div > div > .span-23:before {
     content: "e";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-24:before {
+  .animation.hover > div > div > .span-24:before {
     content: "-";
     transition: all .4s;
     transition-delay: .3s; }
-  .animation.hover > h1 > .span-25:before {
+  .animation.hover > div > div > .span-25:before {
     content: "c";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-26:before {
+  .animation.hover > div > div > .span-26:before {
     content: "o";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-27:before {
+  .animation.hover > div > div > .span-27:before {
     content: "m";
     transition: all .4s;
     transition-delay: .4s; }
-  .animation.hover > h1 > .span-28:before {
+  .animation.hover > div > div > .span-28:before {
     content: "m";
     transition: all .4s;
     transition-delay: .05s; }
-  .animation.hover > h1 > .span-29:before {
+  .animation.hover > div > div > .span-29:before {
     content: "e";
     transition: all .4s;
     transition-delay: .2s; }
-  .animation.hover > h1 > .span-30:before {
+  .animation.hover > div > div > .span-30:before {
     content: "r";
     transition: all .4s;
     transition-delay: .36s; }
-  .animation.hover > h1 > .span-31:before {
+  .animation.hover > div > div > .span-31:before {
     content: "c";
     transition: all .4s;
     transition-delay: .3s; }
-  .animation.hover > h1 > .span-32:before {
+  .animation.hover > div > div > .span-32:before {
     content: "e";
     transition: all .4s;
     transition-delay: .1s; }
-  .animation.hover > h1 > .span-33:before {
+  .animation.hover > div > div > .span-33:before {
     content: ".";
     transition: all .4s;
     transition-delay: .24s; }
 
 .span-small {
   width: 6rem !important; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 1500px) {
     .span-small {
-      width: 5rem !important; } }
-  @media only screen and (max-width: 669px) {
+      width: 4rem !important; } }
+  @media only screen and (max-width: 500px) {
     .span-small {
-      width: 3.8rem !important; } }
-  @media only screen and (max-width: 37.5em) {
-    .span-small {
-      width: 3.5rem !important; } }
+      width: 2.5rem !important; } }
 
 .span-xs {
   width: 4rem !important; }
-  @media only screen and (max-width: 669px) {
+  @media only screen and (max-width: 1500px) {
     .span-xs {
       width: 3rem !important; } }
-  @media only screen and (max-width: 634px) {
+  @media only screen and (max-width: 500px) {
     .span-xs {
-      width: 2rem !important; } }
+      width: 1.5rem !important; } }
 
 .span-big {
-  width: 12rem !important; }
+  width: 10rem !important; }
   @media only screen and (max-width: 1500px) {
     .span-big {
-      width: 10rem !important; } }
-  @media only screen and (max-width: 1240px) {
+      width: 7rem !important; } }
+  @media only screen and (max-width: 500px) {
     .span-big {
-      width: 8rem !important; } }
-  @media only screen and (max-width: 37.5em) {
-    .span-big {
-      width: 6rem !important; } }
-  @media only screen and (max-width: 37.5em) {
-    .span-big {
-      width: 5rem !important; } }
+      width: 5.5rem !important; } }
 
 .span-space {
   width: 5rem;
@@ -1106,12 +1077,18 @@ span.active:before {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media only screen and (max-width: 37.5em) {
+    .main .awards {
+      height: 60vh; } }
   .main .awards__content {
     flex: 0 0 60%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 12rem; }
+    @media only screen and (max-width: 62.5em) {
+      .main .awards__content {
+        padding: 6rem; } }
     @media only screen and (max-width: 37.5em) {
       .main .awards__content {
         padding: 2rem; } }
@@ -1119,6 +1096,12 @@ span.active:before {
       font-family: "Open Sans";
       font-weight: 600;
       font-size: 3rem; }
+      @media only screen and (max-width: 62.5em) {
+        .main .awards__content-header {
+          font-size: 2.5rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .main .awards__content-header {
+          font-size: 2rem; } }
   .main .awards__list {
     display: flex;
     justify-content: center;
@@ -1146,6 +1129,9 @@ span.active:before {
 .main .main__concept {
   display: flex;
   height: 100vh; }
+  @media only screen and (max-width: 37.5em) {
+    .main .main__concept {
+      height: 60vh; } }
   .main .main__concept__left {
     background-color: #99D08B;
     flex: 0 0 30%;
@@ -1193,6 +1179,9 @@ span.active:before {
   display: flex;
   height: 100vh;
   overflow: hidden; }
+  @media only screen and (max-width: 37.5em) {
+    .main .banner {
+      height: 60vh; } }
   .main .banner__content {
     width: 100%;
     height: 100%; }
@@ -1248,19 +1237,29 @@ span.active:before {
 .main .mobile {
   display: flex;
   height: 100vh; }
+  @media only screen and (max-width: 37.5em) {
+    .main .mobile {
+      height: 60vh; } }
   .main .mobile__box-left {
     flex: 0 0 50%;
     background-image: url("../img/frans hals museum/frans__mobile__left.jpg");
     background-size: cover;
     background-position: center; }
+    @media only screen and (max-width: 37.5em) {
+      .main .mobile__box-left {
+        flex: 1 0 40%;
+        margin-right: .3rem; } }
   .main .mobile__box-right {
     flex: 0 0 50%;
     background-image: url("../img/frans hals museum/frans__mobile__right.jpg");
     background-size: cover;
     background-position: center; }
+    @media only screen and (max-width: 37.5em) {
+      .main .mobile__box-right {
+        flex: 1 0 40%;
+        margin-left: .3rem; } }
 
 .content__bottom {
-  width: 100vw;
   overflow: hidden;
   display: none; }
   .content__bottom.active {
@@ -1270,6 +1269,9 @@ span.active:before {
   width: 100vw;
   display: flex;
   height: 100vh; }
+  @media only screen and (max-width: 37.5em) {
+    .main .info {
+      height: 60vh; } }
   .main .info__content {
     flex: 0 0 30%;
     display: flex;

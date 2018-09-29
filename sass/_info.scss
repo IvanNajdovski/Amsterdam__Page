@@ -3,6 +3,9 @@
     width: 100vw;
     display: flex;
     height: 100vh;
+    @media only screen and(max-width: $bp-medium){
+      height: 60vh;
+    }
     &__content {
       flex: 0 0 30%;
       display: flex;

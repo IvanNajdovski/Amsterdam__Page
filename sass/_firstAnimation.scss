@@ -15,7 +15,7 @@
     flex-wrap: wrap;
   }
   &__banner{
-    flex: 0 0 33.3333%;
+    flex: 1 0 33.33%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -31,104 +31,65 @@
         flex: 0 0 0%;
         transition-timing-function: ease-in-out;
         transition: all 1s;
+
       }
     }
 
   }
-  & h1{
+  &__flex-container{
+    display: flex;
+  }
+  &__text__main{
+    //background-color: orangered;
     position: absolute;
-    top:65%;
+    top:55%;
     left:5%;
     transform: translate(0,-50%);
     color: #fff;
     font-family: "Open Sans";
+    display: flex;
+    height: 20rem;
     font-weight: 600;
     font-size: 13rem;
-    display: flex;
-    justify-items: flex-start;
     padding: 0 6rem;
-    @media only screen and(max-width: 1700px){
-      padding: 0 8rem  ;
-    }
-    @media only screen and(max-width: $bp-huge){
-      font-size: 10rem;
-    }
-    @media only screen and(max-width: 1500px){
-      padding: 0 6rem  ;
-    }
-    @media only screen and(max-width: $bp-largest){
-      padding: 0 8rem  ;
-    }
-    @media only screen and(max-width: 1300px){
-      padding: 0 5rem  ;
-    }
-    @media only screen and(max-width: $bp-large){
-      padding: 0 4rem ;
-    }
-    @media only screen and(max-width: 1186px){
-      padding: 0 3rem ;
-    }
-    @media only screen and(max-width: 1085px){
-      padding: 0 10rem ;
-    }
-    @media only screen and(max-width: 1019px){
-      padding: 0 6rem ;
-    }
-    @media only screen and(max-width: 917px){
-      padding: 0 3.5rem ;
-    }
-    @media only screen and(max-width: 833px){
-      font-size: 7rem;
-      padding: 0 0rem ;
-    }
-    @media only screen and(max-width: 917px){
-      padding: 0 3.5rem ;
-    }
-    @media only screen and(max-width: 500px){
-      padding: 0 1rem ;
-    }
-    @media only screen and(max-width: 459px){
-      padding: 0 0 ;
+    @media only screen and(max-width: $bp-medium){
+      padding: 0 3rem;
     }
 
     flex-wrap: wrap;
+    & div{
+      font-size: inherit;
+      //width: 100%;
+
     & span{
       display: flex;
       justify-content: center;
       justify-self: center;
       visibility: hidden;
-      width: 8rem;
-      height: 17rem;
+      font-size: 10rem;
+      color: #fff;
+      width: 7rem;
+      height: 12rem;
       overflow: hidden;
       @media only screen and(max-width: 1500px){
-        width: 8rem;
-      }
-      @media only screen and(max-width: $bp-largest){
-        width: 6rem;
-      }
-      @media only screen and(max-width: 1160px){
-        width: 5.5rem;
-      }
-      @media only screen and(max-width: 833px){
+        font-size: 8rem;
         width: 5rem;
+        height: 9rem;
       }
-      @media only screen and(max-width: 766px){
+      @media only screen and(max-width: 1500px){
+        font-size: 6rem;
         width: 4rem;
+        height: 7rem;
       }
-      @media only screen and(max-width: $bp-medium){
-        width: 3.5rem ;
-      }
-      @media only screen and(max-width: 433px){
-        width: 3.5rem ;
-      }
+
       //433
       //766
       &:before{
         //content: contents;
-        display: block;
+        display: inline-block;
         color: #fff;
         visibility: visible;
-        transform: translate(50%,150px );
+        transform: translate(50%,80px );
         transition: all .3s;
       }
       &.active{
@@ -137,12 +98,16 @@
         }
       }
     }
+    }
   }
-  &.hover>h1>span:before{
-    transform: translate(  55%, 0);
+  &.hover> .animation__text__main> .animation__flex-container>span:before{
+    transform: translate(  55%, -15px);
+    @media only screen and(max-width: 500px){
+      transform: translate(  55%, -5px);
+    }
     //transition: all .3s;
   }
-  &.hover>h1>.span{
+  &.hover>div>div>.span{
     &-1{
       &:before {
         content: "S";
@@ -377,41 +342,33 @@
 .span{
   &-small{
     width: 6rem !important;
-    @media only screen and(max-width: 1240px){
-      width:5rem !important;
+    @media only screen and(max-width: 1500px){
+      width: 4rem !important;
     }
-    @media only screen and(max-width: 669px){
-      width: 3.8rem !important;
+    @media only screen and(max-width: 500px){
+      width: 2.5rem !important;
     }
-    @media only screen and(max-width: $bp-medium){
-      width: 3.5rem !important;
-    }
+
   }
   //669
   &-xs{
     width: 4rem !important;
-    @media only screen and(max-width: 669px){
+    @media only screen and(max-width: 1500px){
       width: 3rem !important;
     }
-    @media only screen and(max-width: 634px){
-      width: 2rem !important;
+    @media only screen and(max-width: 500px){
+      width: 1.5rem !important;
     }
+
 
   }
   &-big{
-    width: 12rem !important;
+    width: 10rem !important;
     @media only screen and(max-width: 1500px){
-      width: 10rem !important;
-
+      width: 7rem !important;
     }
-    @media only screen and(max-width: 1240px){
-      width: 8rem !important;
-    }
-    @media only screen and(max-width: $bp-medium){
-      width: 6rem !important;
-    }
-    @media only screen and(max-width: $bp-medium){
-      width: 5rem !important;
+    @media only screen and(max-width: 500px){
+      width: 5.5rem !important;
     }
 
   }

@@ -11,6 +11,10 @@
   height: 5rem;
   width: 15rem;
   border-radius: 2.5rem;
+  @media only screen and(max-width: $bp-medium){
+    bottom: 2rem;
+    left: 2rem;
+  }
   &-content{
     background-image: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .2));
     width: 5rem;
@@ -105,9 +109,13 @@
   justify-content: flex-end;
 
 
-  height: 5rem;
-  width: 15rem;
+  bottom: 2rem;
+  right: 2rem;
   border-radius: 50%;
+  @media only screen and(max-width: $bp-medium){
+    bottom: 2rem;
+    left: 2rem;
+  }
   &-content{
     background-image: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .2));
     width: 5rem;
