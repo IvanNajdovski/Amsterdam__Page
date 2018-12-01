@@ -101,7 +101,7 @@ $(document).ready(function () {
     });
 //           --------------SCROLLING FUNCTION AND EVENT FOR THE HORISONTAL MAIN DIV-------------
 
-    $(window).on("mousewheel DOMMouseScroll touchmove", function (e) {
+    $(window).on("mousewheel DOMMouseScroll", function (e) {
         // console.log(fullHeight)
         // console.log("window height is",$(window).innerHeight())
         // console.log(counterUp)
